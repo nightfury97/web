@@ -1,0 +1,41 @@
+﻿@model List<SweepCake.Models.Cake_Dentals>
+<div class="collect-grid">
+    <div class="row">
+        <div class="clearfix"></div>
+
+        @foreach (var item in Model)
+        {
+            var link = "/product/" + item.TypeCode + "/" + item.ID;
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="product-grid">
+                <div class="feature-img">
+                    <a href="@link">
+                        <img src="@item.Image1" alt="@item.Name" class="img-responsive">
+                    </a>
+
+                </div>
+                <div class="prod-info">
+
+                    <div class="price-box">
+                        <p class="special-price">
+                            <span>@item.Price₫</span>
+                        </p>
+                    </div>
+
+                    <a href="@link">
+                        <h3>@item.Name</h3>
+                    </a>
+                </div>
+                <div class="grid-action-box">
+
+
+                    <a href="/tiramisu-tron" class="list-btn-add"><span>Chi tiết</span></a>
+
+                </div>
+            </div>
+        </div>
+
+         }
+               
+            </div>
+        </div>

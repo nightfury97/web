@@ -1,0 +1,26 @@
+﻿<div class="top-header">
+    <div class="container">
+        <div class="top-header-left">
+            <ul>
+                <li><a href="/Login/Login">My Account</a></li>
+                <li><a href="">Checkout</a></li>
+            </ul>
+            <div class="clearfix"> </div>
+        </div>
+        @{ Html.RenderAction("Cart", "Common");}
+        <div class="top-header-right">
+            <ul>
+                @*<li>
+                    <form>
+                        <input type="text">
+                        <input type="submit" value="" />
+                    </form>
+
+                </li>*@
+                <li><a href="/Login/Login">Login</a></li>
+                <li><a href="/User/register">Register</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>

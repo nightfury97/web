@@ -1,0 +1,16 @@
+﻿@model List<Shop_data.Cake_Type>
+<div class="category">
+    <br />
+    <div class="module-title">
+        <h2 id="product">Danh mục bánh</h2>
+    </div>
+    <ul class="list-unstyled">
+
+        @foreach (var item in Model)
+        {
+            var link = "/product/" + item.Cake_Type_Code;
+            <li><a class="" href="@link"><span>@item.Cake_Type_Name</span></a></li>
+        }
+        
+    </ul>
+</div>

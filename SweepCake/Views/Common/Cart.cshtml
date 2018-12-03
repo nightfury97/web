@@ -1,0 +1,6 @@
+﻿@model List<SweepCake.Models.CartItem>
+
+<div class="top-header-center">
+    <a href="/Cart/Index"> <p><span class="cart"> </span>Cart<label>$ @Model.Sum(m => m.Quantity * m.Cake.Cake_Price * (1 - m.Cake.Discount))</label></p></a>
+
+</div>

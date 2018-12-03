@@ -1,0 +1,94 @@
+﻿@model SweepCake.Models.RegisterModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<!-- script-for-nav -->
+<script>
+    $("span.menu").click(function () {
+        $(".head-nav ul").slideToggle(300, function () {
+            // Animation complete.
+        });
+    });
+</script>
+<div class="content">
+    <div class="main">
+        <div class="container">
+            <div class="register">
+                @using (Html.BeginForm("Register", "User", FormMethod.Post))
+                {
+                <form>
+                    @*@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success">@ViewBag.Success</div>
+        }*@
+                    <div class="register-top-grid">
+                        <h3>PERSONAL INFORMATION</h3>
+
+                        <div class="wow fadeInLeft" data-wow-delay="0.4s">
+                            <span>Customer Name<label>*</label></span>
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-delay="0.4s">
+                            <span>Login User<label>*</label></span>
+                            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-delay="0.4s">
+                            <span>PassWord<label>*</label></span>
+                            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInRight" data-wow-delay="0.4s">
+                            <span>ConfirmPass <label>*</label></span>
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-delay="0.4s">
+                            <span>Phone Number</span>
+                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInRight" data-wow-delay="0.4s">
+                            <span>Email</span>
+                            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInLeft" data-wow-delay="0.4s">
+                            <span>Address</span>
+                            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+                            @*@Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })*@
+                        </div>
+                        <div class="wow fadeInRight">
+                            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                            @if (ViewBag.Success != null)
+                            {
+                                <div class="alert alert-success">@ViewBag.Success</div>
+                            }
+                        </div>
+                        @*<div class="form-group">
+            <div class="wow fadeInRight">
+                @Html.Captcha(registerCapcha)
+                @Html.TextBox("CaptchaCode")
+            </div>
+        </div>*@
+                        <div class="clearfix"> </div>
+                        <div class="wow fadeInRight">
+                            <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
+                        </div>
+                    </div>
+                    
+                </form>
+                    
+                
+
+
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>

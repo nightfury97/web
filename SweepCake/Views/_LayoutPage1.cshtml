@@ -24,7 +24,8 @@
    
 </head>
 <body>
-  @RenderPage("~/Views/Common/header.cshtml")
+    @RenderPage("~/Views/Common/header.cshtml")
+    @*@{ Html.RenderAction("Cart", "Common");}*@
     <!-- /top-header -->
     <!-- main-menu -->
     <div class="main-menu">
@@ -60,7 +61,7 @@
         @RenderBody()
     </div>
     @RenderPage("~/Views/Common/footer.cshtml")
-  
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

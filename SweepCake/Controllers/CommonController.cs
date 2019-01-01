@@ -16,6 +16,7 @@ namespace SweepCake.Controllers
         {
             if(CommonConstant.USER_SESSION != null)
             ViewBag.User = Session[CommonConstant.USER_SESSION];
+            //ViewBag.Name = 
             return View();
         }
         [ChildActionOnly]
@@ -36,6 +37,18 @@ namespace SweepCake.Controllers
 
             return PartialView(list);
         }
+        //[ChildActionOnly]
+        //public PartialViewResult Header()
+        //{
+        //    var user = Session[CommonConstant.USER_SESSION];
+        //    var customer = new user();
+        //    if (user != null)
+        //    {
+                
+        //    }
+
+        //    return PartialView(list);
+        //}
         [ChildActionOnly]
         public PartialViewResult Cake_List(string code)
         {

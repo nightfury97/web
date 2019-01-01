@@ -7,7 +7,21 @@
 <head>
     <link href="~/Content/style2.css" rel="stylesheet" />
 </head>
+<script>
+    jQuery(document).ready(function ($) {
 
+        $('#etalage').etalage({
+            thumb_image_width: 238.5,
+            thumb_image_height: 238.5,
+            
+            show_hint: true,
+            click_callback: function (image_anchor, instance_id) {
+                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+            }
+        });
+
+    });
+</script>
 <div class="clearfix"><br></div>
 <div class="container">
     <div class="content row">
@@ -70,7 +84,7 @@
                                 <div class="product-grid">
                                     <div class="feature-img">
                                         <a href="@link">
-                                            <img src="@item.Image1" alt="@item.Name" class="img-responsive">
+                                            <img src="@item.Image1" alt="@item.Name" class="img-responsive" style="height: 238.5px">
                                         </a>
 
                                     </div>
@@ -89,7 +103,7 @@
                                     <div class="grid-action-box">
 
 
-                                        <a href="/AddCake?productId=@item.ID&quantity=1" class="list-btn-add"><span>Buy</span></a>
+                                        <a class="list-btn-add" data-id="@item.ID"  data-pri="@item.Price"><span>Buy</span></a>
 
                                     </div>
                                 </div>
@@ -637,23 +651,29 @@
     </div>
 </div>
 
-<script type="text/javascript">
-    function display(view) {
-        if (view == 'grid') {
-            $('.collect-grid').show();
-            $('.collect-list').hide();
-            $('.display').html('<a class="active" id="grid" rel="tooltip" title="Dạng Lưới" onclick="display(\'grid\');loadisotope();"><i class="fa fa-th-large"></i></a> <a id="list" rel="tooltip" title="Dạng Danh sách" onclick="display(\'list\');"><i class="fa fa-th-list"></i></a>');
-            localStorage.setItem('display', 'grid');
-        } else {
-            $('.collect-grid').hide();
-            $('.collect-list').show();
-            $('.display').html('<a id="grid" rel="tooltip" title="Dạng Lưới" onclick="display(\'grid\');loadisotope();"><i class="fa fa-th-large"></i></a> <a class="active" id="list" rel="tooltip" title="Dạng Danh sách" onclick="display(\'list\');"><i class="fa fa-th-list"></i></a>');
-            localStorage.setItem('display', 'list');
-        }
-    }
-    if (localStorage.getItem('display') == 'list') {
-        display('list');
-    } else {
-        display('grid');
+<script>
+    $('.grid-action-box a').click(function () {
+        buycake(this);
+    });
+    function buycake(buyButton) {
+        var cake_id = $(buyButton).data('id');
+        var cake_pri = parseFloat($(buyButton).data('pri'));
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        var num = prompt("Please enter the amount you need to buy :", "1");
+        xhttp.open("POST", "/AddCake?productId=" + cake_id + "&quantity=" + num, true);
+
+        //alert("Added Cart");
+        xhttp.send();
+
+        var total = parseFloat($('#cart-info').text());
+        total += (num * cake_pri);
+        $(document).ready(function () {
+            $('#cart-info').text(total);
+        });
     }
 </script>

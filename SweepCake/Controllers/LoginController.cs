@@ -29,11 +29,19 @@ namespace SweepCake.Controllers
                 if (kq!=0)
                 {
                     var user = dao.GetByID(model.ID);
+                    var customer = dao.GetCustomerByID(model.ID);
                     var userSession = new UserLogin();
+                    var user1 = new user();
                     userSession.UserID = user.ID;
                     userSession.IdRule = Convert.ToInt32(user.ID_Rule);
+                    userSession.Name = customer.Customer_Name;
+                    userSession.Address = customer.Customer_Adress;
+                    userSession.Phone = customer.Customer_Phone;
+                    userSession.Email = customer.Customer_Email;
+
 
                     Session.Add(CommonConstant.USER_SESSION, userSession);
+    
                     return RedirectToAction("checkout", "product");
                 }
                 else
@@ -41,7 +49,7 @@ namespace SweepCake.Controllers
                     ModelState.AddModelError("", "Username or password is incorect");
                 }
             }
-            return View();
+            return Redirect("/");
         }
         public ActionResult Logout()
         {

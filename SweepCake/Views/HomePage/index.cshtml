@@ -187,14 +187,15 @@
                 </div>
                 <div class="top-grid-info" data-id="@item.ID">
                     <a href="@detail"><img src="@item.Image1" class="img-responsive" title="@item.Name" /></a>
-                  
+
                     <p>@item.Decripsion</p>
                     <span>$ @item.Price</span>
                     <div class="clearfix"> </div>
                     <div class="buy">
-                        <a class="btn" href="/AddCake?productId=@item.ID&quantity=1">Buy Now</a>
+                        <a class="btn" data-id="@item.ID" @*onkeypress="@Html.Action("AddItem","Cart",new { @productId = item.ID,@quantity = 1 })"*@>Buy Now</a>
+
                     </div>
-                   
+
                 </div>
             </div>
         }
@@ -252,7 +253,7 @@
                 var link = "/detail/" + aaa.ID;
                 <div class="col-md-3 bottom-grid-left-grid text-center" data-id="@aaa.ID">
                     <a href="@link"> <img src="@aaa.Image1" title="@aaa.Name" class="best-sale-img" /></a>
-               
+
                     <h4>@aaa.Name</h4>
                     <p>$ @aaa.Price</p>
                 </div>
@@ -290,20 +291,21 @@
 </div>
 <div id="fb-root"></div>
 <script>
-    $('.buy button').click(function () {
-       buycake(this);
+    $('.buy a').click(function () {
+        buycake(this);
     });
-    function buycake() {
-        var cake_id = $this.data('id');
+    function buycake(buyButton) {
+        var cake_id = $(buyButton).data('id');
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 document.getElementById("demo").innerHTML = xhttp.responseText;
             }
         };
-        xhttp.open("POST", "AddCake?productId=" + cake_id + "&quantity=1", true);
-        
-        alert("Added Cart");
+        var num = prompt("Please enter the amount you need to buy :", "1");
+        xhttp.open("POST", "/AddCake?productId=" + cake_id + "&quantity="+num, true);
+
+        //alert("Added Cart");
         xhttp.send();
     }
 </script>

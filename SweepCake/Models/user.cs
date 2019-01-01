@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SweepCake
+namespace SweepCake.Models
 {
     [Serializable]
-    public class UserLogin
+    public class user
     {
-        public string UserID { set; get; }
-        public int IdRule { set; get; }
         public string Name { set; get; }
         public string Phone { set; get; }
         public string Email { set; get; }

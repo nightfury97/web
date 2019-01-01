@@ -1,8 +1,10 @@
-﻿<div class="top-header">
+﻿
+
+<div class="top-header">
     <div class="container">
         <div class="top-header-left">
             <ul>
-                <li><a href="/Login/Login">My Account</a></li>
+
                 <li><a href="">Checkout</a></li>
             </ul>
             <div class="clearfix"> </div>
@@ -11,14 +13,24 @@
         <div class="top-header-right">
             <ul>
                 @*<li>
-                    <form>
-                        <input type="text">
-                        <input type="submit" value="" />
-                    </form>
+            <form>
+                <input type="text">
+                <input type="submit" value="" />
+            </form>
 
-                </li>*@
-                <li><a href="/Login/Login">Login</a></li>
-                <li><a href="/User/register">Register</a></li>
+        </li>*@
+                @{
+                    var session = (UserLogin)Session[SweepCake.Common.CommonConstant.USER_SESSION];
+                }
+                @if (session == null)
+                {
+                    <li><a href="/Login/Login">Login</a></li>
+                    <li><a href="/User/register">Register</a></li>
+                }
+                else
+                {
+                    <li><a href=""><label>Hello @session.Name</label></a></li>
+                }
             </ul>
         </div>
         <div class="clearfix"> </div>

@@ -58,7 +58,7 @@
             </div>
             <div class="subtotal">@(item.Cake.Cake_Price * (1 - item.Cake.Discount) * item.Quantity)</div>
             <div class="remove">
-                <button>Remove</button>
+                <button data-id2="@item.Cake.Cake_ID">Remove</button>
             </div>
         </div>
     }

@@ -81,8 +81,12 @@ function recalculateCart(onlyTotal) {
         $('.checkout-cta').fadeIn(fadeTime);
       }
       $('.final-value').fadeIn(fadeTime);
+      });
+
+    }
+    $(document).ready(function () {
+        $('#cart-info').text(total);
     });
-  }
 }
 
 /* Update quantity */
@@ -152,11 +156,22 @@ function updateSumItems() {
 /* Remove item from cart */
 function removeItem(removeButton) {
   /* Remove row from DOM and recalc cart total */
-  var productRow = $(removeButton).parent().parent();
+    var productRow = $(removeButton).parent().parent();
+    var cake_id = $(removeButton).data('id2');
   productRow.slideUp(fadeTime, function() {
     productRow.remove();
     recalculateCart();
-    updateSumItems();
+      updateSumItems();
+
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+          if (xhttp.readyState == 4 && xhttp.status == 200) {
+              document.getElementById("demo").innerHTML = xhttp.responseText;
+          }
+      };
+      xhttp.open("POST", "/Cart/Remove?cake_id=" + cake_id , true);
+      xhttp.send();
   });
 }
 /* urlUpdate*/

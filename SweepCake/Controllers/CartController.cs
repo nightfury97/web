@@ -130,9 +130,35 @@ namespace SweepCake.Controllers
             var product = new DentalProduct().GetByID(cake_id);
             foreach (var item in sessionCart)
             {            
-                if (product != null)
+                if (product != null && product.Cake_ID==item.Cake.Cake_ID)
                 {
                     item.Quantity = quantity;
+                }
+            }
+            Session[CartSession] = sessionCart;
+        }
+        [HttpPost]
+        public void Remove(string cake_id)
+        {
+            //var jsonCart = new JavaScriptSerializer().Deserialize<CartItem>(cartModel);
+            var sessionCart = (List<CartItem>)Session[CartSession];
+
+            //foreach (var item in sessionCart)
+            //{
+            //    var jsonItem = jsonCart.SingleOrDefault(x => x.Cake.Cake_ID == item.Cake.Cake_ID);
+            //    if (jsonItem != null)
+            //    {
+            //        item.Quantity = jsonItem.Quantity;
+            //    }
+            //}
+
+            var product = new DentalProduct().GetByID(cake_id);
+            foreach (var item in sessionCart)
+            {
+                if (product != null && product.Cake_ID == item.Cake.Cake_ID)
+                {
+                    sessionCart.Remove(item);
+                    break;
                 }
             }
             Session[CartSession] = sessionCart;

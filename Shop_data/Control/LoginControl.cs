@@ -27,6 +27,10 @@ namespace Shop_data.Control
         {
             return data.LoginSystems.SingleOrDefault(x => x.ID == userName);
         }
+        public Customer GetCustomerByID(string userName)
+        {
+            return data.Customers.SingleOrDefault(x => x.Customer_ID == userName);
+        }
         public bool CheckUserName(string userName)
         {
             return data.LoginSystems.Count(x => x.ID == userName) > 0;

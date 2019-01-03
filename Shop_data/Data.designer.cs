@@ -30,45 +30,39 @@ namespace Shop_data
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCake_Image(Cake_Image instance);
-    partial void UpdateCake_Image(Cake_Image instance);
-    partial void DeleteCake_Image(Cake_Image instance);
-    partial void InsertCart(Cart instance);
-    partial void UpdateCart(Cart instance);
-    partial void DeleteCart(Cart instance);
-    partial void InsertCart_Item(Cart_Item instance);
-    partial void UpdateCart_Item(Cart_Item instance);
-    partial void DeleteCart_Item(Cart_Item instance);
-    partial void InsertChef(Chef instance);
-    partial void UpdateChef(Chef instance);
-    partial void DeleteChef(Chef instance);
-    partial void InsertCOMMENT(COMMENT instance);
-    partial void UpdateCOMMENT(COMMENT instance);
-    partial void DeleteCOMMENT(COMMENT instance);
-    partial void InsertCustomer(Customer instance);
-    partial void UpdateCustomer(Customer instance);
-    partial void DeleteCustomer(Customer instance);
-    partial void InsertCustomer_Payment_Method(Customer_Payment_Method instance);
-    partial void UpdateCustomer_Payment_Method(Customer_Payment_Method instance);
-    partial void DeleteCustomer_Payment_Method(Customer_Payment_Method instance);
-    partial void InsertDriver(Driver instance);
-    partial void UpdateDriver(Driver instance);
-    partial void DeleteDriver(Driver instance);
-    partial void InsertLoginSystem(LoginSystem instance);
-    partial void UpdateLoginSystem(LoginSystem instance);
-    partial void DeleteLoginSystem(LoginSystem instance);
-    partial void InsertManager(Manager instance);
-    partial void UpdateManager(Manager instance);
-    partial void DeleteManager(Manager instance);
     partial void InsertPayment_Method(Payment_Method instance);
     partial void UpdatePayment_Method(Payment_Method instance);
     partial void DeletePayment_Method(Payment_Method instance);
-    partial void InsertCake_Type(Cake_Type instance);
-    partial void UpdateCake_Type(Cake_Type instance);
-    partial void DeleteCake_Type(Cake_Type instance);
+    partial void InsertManager(Manager instance);
+    partial void UpdateManager(Manager instance);
+    partial void DeleteManager(Manager instance);
+    partial void InsertLoginSystem(LoginSystem instance);
+    partial void UpdateLoginSystem(LoginSystem instance);
+    partial void DeleteLoginSystem(LoginSystem instance);
+    partial void InsertCustomer_Payment_Method(Customer_Payment_Method instance);
+    partial void UpdateCustomer_Payment_Method(Customer_Payment_Method instance);
+    partial void DeleteCustomer_Payment_Method(Customer_Payment_Method instance);
+    partial void InsertCustomer(Customer instance);
+    partial void UpdateCustomer(Customer instance);
+    partial void DeleteCustomer(Customer instance);
+    partial void InsertCOMMENT(COMMENT instance);
+    partial void UpdateCOMMENT(COMMENT instance);
+    partial void DeleteCOMMENT(COMMENT instance);
+    partial void InsertCart_Item(Cart_Item instance);
+    partial void UpdateCart_Item(Cart_Item instance);
+    partial void DeleteCart_Item(Cart_Item instance);
+    partial void InsertCart(Cart instance);
+    partial void UpdateCart(Cart instance);
+    partial void DeleteCart(Cart instance);
     partial void InsertCake(Cake instance);
     partial void UpdateCake(Cake instance);
     partial void DeleteCake(Cake instance);
+    partial void InsertCake_Type(Cake_Type instance);
+    partial void UpdateCake_Type(Cake_Type instance);
+    partial void DeleteCake_Type(Cake_Type instance);
+    partial void InsertCake_Image(Cake_Image instance);
+    partial void UpdateCake_Image(Cake_Image instance);
+    partial void DeleteCake_Image(Cake_Image instance);
     #endregion
 		
 		public DataDataContext() : 
@@ -101,75 +95,11 @@ namespace Shop_data
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Cake_Image> Cake_Images
+		public System.Data.Linq.Table<Payment_Method> Payment_Methods
 		{
 			get
 			{
-				return this.GetTable<Cake_Image>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Cart> Carts
-		{
-			get
-			{
-				return this.GetTable<Cart>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Cart_Item> Cart_Items
-		{
-			get
-			{
-				return this.GetTable<Cart_Item>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Chef> Chefs
-		{
-			get
-			{
-				return this.GetTable<Chef>();
-			}
-		}
-		
-		public System.Data.Linq.Table<COMMENT> COMMENTs
-		{
-			get
-			{
-				return this.GetTable<COMMENT>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Customer> Customers
-		{
-			get
-			{
-				return this.GetTable<Customer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Customer_Payment_Method> Customer_Payment_Methods
-		{
-			get
-			{
-				return this.GetTable<Customer_Payment_Method>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Driver> Drivers
-		{
-			get
-			{
-				return this.GetTable<Driver>();
-			}
-		}
-		
-		public System.Data.Linq.Table<LoginSystem> LoginSystems
-		{
-			get
-			{
-				return this.GetTable<LoginSystem>();
+				return this.GetTable<Payment_Method>();
 			}
 		}
 		
@@ -181,11 +111,59 @@ namespace Shop_data
 			}
 		}
 		
-		public System.Data.Linq.Table<Payment_Method> Payment_Methods
+		public System.Data.Linq.Table<LoginSystem> LoginSystems
 		{
 			get
 			{
-				return this.GetTable<Payment_Method>();
+				return this.GetTable<LoginSystem>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Customer_Payment_Method> Customer_Payment_Methods
+		{
+			get
+			{
+				return this.GetTable<Customer_Payment_Method>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Customer> Customers
+		{
+			get
+			{
+				return this.GetTable<Customer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<COMMENT> COMMENTs
+		{
+			get
+			{
+				return this.GetTable<COMMENT>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cart_Item> Cart_Items
+		{
+			get
+			{
+				return this.GetTable<Cart_Item>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cart> Carts
+		{
+			get
+			{
+				return this.GetTable<Cart>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Cake> Cakes
+		{
+			get
+			{
+				return this.GetTable<Cake>();
 			}
 		}
 		
@@ -197,11 +175,11 @@ namespace Shop_data
 			}
 		}
 		
-		public System.Data.Linq.Table<Cake> Cakes
+		public System.Data.Linq.Table<Cake_Image> Cake_Images
 		{
 			get
 			{
-				return this.GetTable<Cake>();
+				return this.GetTable<Cake_Image>();
 			}
 		}
 		
@@ -245,134 +223,228 @@ namespace Shop_data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, name, phone, email, address, pass);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_customer_payment")]
+		public int add_customer_payment([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomID", DbType="VarChar(50)")] string customID, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PaymetCode", DbType="Char(2)")] string paymetCode, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(16)")] string cardNum, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(16)")] string carName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string month, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(4)")] string year, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CVV", DbType="Char(3)")] string cVV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customID, paymetCode, cardNum, carName, month, year, cVV);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.check_card")]
+		public ISingleResult<check_cardResult> check_card([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(16)")] string num, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ID", DbType="VarChar(50)")] string iD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), num, iD);
+			return ((ISingleResult<check_cardResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_order")]
+		public int add_order([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CustomID", DbType="VarChar(50)")] string customID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(7)")] string custompaymentID, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ShipName", DbType="NVarChar(50)")] string shipName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ShipAddress", DbType="NVarChar(50)")] string shipAddress, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ShipPhone", DbType="NVarChar(50)")] string shipPhone, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ShipEmail", DbType="NVarChar(50)")] string shipEmail, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="STT", DbType="Int")] System.Nullable<int> sTT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customID, custompaymentID, date, shipName, shipAddress, shipPhone, shipEmail, sTT);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cake_Image")]
-	public partial class Cake_Image : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment_Methods")]
+	public partial class Payment_Method : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Imange_ID;
+		private string _Payment_Method_Code;
 		
-		private string _Cake_ID;
+		private string _Payment_Method_Descripsion;
 		
-		private string _Cake_Image1;
-		
-		private EntityRef<Cake> _Cake;
+		private EntitySet<Customer_Payment_Method> _Customer_Payment_Methods;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnImange_IDChanging(int value);
-    partial void OnImange_IDChanged();
-    partial void OnCake_IDChanging(string value);
-    partial void OnCake_IDChanged();
-    partial void OnCake_Image1Changing(string value);
-    partial void OnCake_Image1Changed();
+    partial void OnPayment_Method_CodeChanging(string value);
+    partial void OnPayment_Method_CodeChanged();
+    partial void OnPayment_Method_DescripsionChanging(string value);
+    partial void OnPayment_Method_DescripsionChanged();
     #endregion
 		
-		public Cake_Image()
+		public Payment_Method()
 		{
-			this._Cake = default(EntityRef<Cake>);
+			this._Customer_Payment_Methods = new EntitySet<Customer_Payment_Method>(new Action<Customer_Payment_Method>(this.attach_Customer_Payment_Methods), new Action<Customer_Payment_Method>(this.detach_Customer_Payment_Methods));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imange_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Imange_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Method_Code", DbType="Char(2) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Payment_Method_Code
 		{
 			get
 			{
-				return this._Imange_ID;
+				return this._Payment_Method_Code;
 			}
 			set
 			{
-				if ((this._Imange_ID != value))
+				if ((this._Payment_Method_Code != value))
 				{
-					this.OnImange_IDChanging(value);
+					this.OnPayment_Method_CodeChanging(value);
 					this.SendPropertyChanging();
-					this._Imange_ID = value;
-					this.SendPropertyChanged("Imange_ID");
-					this.OnImange_IDChanged();
+					this._Payment_Method_Code = value;
+					this.SendPropertyChanged("Payment_Method_Code");
+					this.OnPayment_Method_CodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5)")]
-		public string Cake_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Method_Descripsion", DbType="NVarChar(30)")]
+		public string Payment_Method_Descripsion
 		{
 			get
 			{
-				return this._Cake_ID;
+				return this._Payment_Method_Descripsion;
 			}
 			set
 			{
-				if ((this._Cake_ID != value))
+				if ((this._Payment_Method_Descripsion != value))
 				{
-					if (this._Cake.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCake_IDChanging(value);
+					this.OnPayment_Method_DescripsionChanging(value);
 					this.SendPropertyChanging();
-					this._Cake_ID = value;
-					this.SendPropertyChanged("Cake_ID");
-					this.OnCake_IDChanged();
+					this._Payment_Method_Descripsion = value;
+					this.SendPropertyChanged("Payment_Method_Descripsion");
+					this.OnPayment_Method_DescripsionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Cake_Image", Storage="_Cake_Image1", DbType="NVarChar(MAX)")]
-		public string Cake_Image1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Method_Customer_Payment_Method", Storage="_Customer_Payment_Methods", ThisKey="Payment_Method_Code", OtherKey="Payment_Menthod_Code")]
+		public EntitySet<Customer_Payment_Method> Customer_Payment_Methods
 		{
 			get
 			{
-				return this._Cake_Image1;
+				return this._Customer_Payment_Methods;
 			}
 			set
 			{
-				if ((this._Cake_Image1 != value))
+				this._Customer_Payment_Methods.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment_Method = this;
+		}
+		
+		private void detach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		{
+			this.SendPropertyChanging();
+			entity.Payment_Method = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Manager")]
+	public partial class Manager : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Manager_ID;
+		
+		private string _Manager_Name;
+		
+		private string _Manager_Phone;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnManager_IDChanging(string value);
+    partial void OnManager_IDChanged();
+    partial void OnManager_NameChanging(string value);
+    partial void OnManager_NameChanged();
+    partial void OnManager_PhoneChanging(string value);
+    partial void OnManager_PhoneChanged();
+    #endregion
+		
+		public Manager()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Manager_ID
+		{
+			get
+			{
+				return this._Manager_ID;
+			}
+			set
+			{
+				if ((this._Manager_ID != value))
 				{
-					this.OnCake_Image1Changing(value);
+					this.OnManager_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Cake_Image1 = value;
-					this.SendPropertyChanged("Cake_Image1");
-					this.OnCake_Image1Changed();
+					this._Manager_ID = value;
+					this.SendPropertyChanged("Manager_ID");
+					this.OnManager_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cake_Image", Storage="_Cake", ThisKey="Cake_ID", OtherKey="Cake_ID", IsForeignKey=true)]
-		public Cake Cake
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_Name", DbType="NVarChar(30)")]
+		public string Manager_Name
 		{
 			get
 			{
-				return this._Cake.Entity;
+				return this._Manager_Name;
 			}
 			set
 			{
-				Cake previousValue = this._Cake.Entity;
-				if (((previousValue != value) 
-							|| (this._Cake.HasLoadedOrAssignedValue == false)))
+				if ((this._Manager_Name != value))
 				{
+					this.OnManager_NameChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cake.Entity = null;
-						previousValue.Cake_Images.Remove(this);
-					}
-					this._Cake.Entity = value;
-					if ((value != null))
-					{
-						value.Cake_Images.Add(this);
-						this._Cake_ID = value.Cake_ID;
-					}
-					else
-					{
-						this._Cake_ID = default(string);
-					}
-					this.SendPropertyChanged("Cake");
+					this._Manager_Name = value;
+					this.SendPropertyChanged("Manager_Name");
+					this.OnManager_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_Phone", DbType="Char(12)")]
+		public string Manager_Phone
+		{
+			get
+			{
+				return this._Manager_Phone;
+			}
+			set
+			{
+				if ((this._Manager_Phone != value))
+				{
+					this.OnManager_PhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Manager_Phone = value;
+					this.SendPropertyChanged("Manager_Phone");
+					this.OnManager_PhoneChanged();
 				}
 			}
 		}
@@ -398,62 +470,221 @@ namespace Shop_data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
-	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoginSystem")]
+	public partial class LoginSystem : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Customer_ID;
+		private string _ID;
 		
-		private int _Cart_ID;
+		private string _Pass;
 		
-		private string _Customer_Payment_ID;
-		
-		private System.Nullable<System.DateTime> _Payment_time;
-		
-		private string _Shipping_Address;
-		
-		private string _Customer_Requirements;
-		
-		private System.Nullable<int> _Cart_Status;
-		
-		private string _Driver_ID;
-		
-		private EntitySet<Cart_Item> _Cart_Items;
+		private System.Nullable<int> _ID_Rule;
 		
 		private EntityRef<Customer> _Customer;
-		
-		private EntityRef<Driver> _Driver;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCustomer_IDChanging(string value);
-    partial void OnCustomer_IDChanged();
-    partial void OnCart_IDChanging(int value);
-    partial void OnCart_IDChanged();
-    partial void OnCustomer_Payment_IDChanging(string value);
-    partial void OnCustomer_Payment_IDChanged();
-    partial void OnPayment_timeChanging(System.Nullable<System.DateTime> value);
-    partial void OnPayment_timeChanged();
-    partial void OnShipping_AddressChanging(string value);
-    partial void OnShipping_AddressChanged();
-    partial void OnCustomer_RequirementsChanging(string value);
-    partial void OnCustomer_RequirementsChanged();
-    partial void OnCart_StatusChanging(System.Nullable<int> value);
-    partial void OnCart_StatusChanged();
-    partial void OnDriver_IDChanging(string value);
-    partial void OnDriver_IDChanged();
+    partial void OnIDChanging(string value);
+    partial void OnIDChanged();
+    partial void OnPassChanging(string value);
+    partial void OnPassChanged();
+    partial void OnID_RuleChanging(System.Nullable<int> value);
+    partial void OnID_RuleChanged();
     #endregion
 		
-		public Cart()
+		public LoginSystem()
 		{
-			this._Cart_Items = new EntitySet<Cart_Item>(new Action<Cart_Item>(this.attach_Cart_Items), new Action<Cart_Item>(this.detach_Cart_Items));
 			this._Customer = default(EntityRef<Customer>);
-			this._Driver = default(EntityRef<Driver>);
 			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pass", DbType="VarChar(32)")]
+		public string Pass
+		{
+			get
+			{
+				return this._Pass;
+			}
+			set
+			{
+				if ((this._Pass != value))
+				{
+					this.OnPassChanging(value);
+					this.SendPropertyChanging();
+					this._Pass = value;
+					this.SendPropertyChanged("Pass");
+					this.OnPassChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Rule", DbType="Int")]
+		public System.Nullable<int> ID_Rule
+		{
+			get
+			{
+				return this._ID_Rule;
+			}
+			set
+			{
+				if ((this._ID_Rule != value))
+				{
+					this.OnID_RuleChanging(value);
+					this.SendPropertyChanging();
+					this._ID_Rule = value;
+					this.SendPropertyChanged("ID_Rule");
+					this.OnID_RuleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Customer", Storage="_Customer", ThisKey="ID", OtherKey="Customer_ID", IsUnique=true, IsForeignKey=false)]
+		public Customer Customer
+		{
+			get
+			{
+				return this._Customer.Entity;
+			}
+			set
+			{
+				Customer previousValue = this._Customer.Entity;
+				if (((previousValue != value) 
+							|| (this._Customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Customer.Entity = null;
+						previousValue.LoginSystem = null;
+					}
+					this._Customer.Entity = value;
+					if ((value != null))
+					{
+						value.LoginSystem = this;
+					}
+					this.SendPropertyChanged("Customer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer_Payment_Methods")]
+	public partial class Customer_Payment_Method : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Customer_Payment_ID;
+		
+		private string _Customer_ID;
+		
+		private string _Payment_Menthod_Code;
+		
+		private string _Card_Number;
+		
+		private string _Expmonth;
+		
+		private string _Expyear;
+		
+		private string _CVV;
+		
+		private string _Card_Name;
+		
+		private EntityRef<Payment_Method> _Payment_Method;
+		
+		private EntityRef<Customer> _Customer;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCustomer_Payment_IDChanging(int value);
+    partial void OnCustomer_Payment_IDChanged();
+    partial void OnCustomer_IDChanging(string value);
+    partial void OnCustomer_IDChanged();
+    partial void OnPayment_Menthod_CodeChanging(string value);
+    partial void OnPayment_Menthod_CodeChanged();
+    partial void OnCard_NumberChanging(string value);
+    partial void OnCard_NumberChanged();
+    partial void OnExpmonthChanging(string value);
+    partial void OnExpmonthChanged();
+    partial void OnExpyearChanging(string value);
+    partial void OnExpyearChanged();
+    partial void OnCVVChanging(string value);
+    partial void OnCVVChanged();
+    partial void OnCard_NameChanging(string value);
+    partial void OnCard_NameChanged();
+    #endregion
+		
+		public Customer_Payment_Method()
+		{
+			this._Payment_Method = default(EntityRef<Payment_Method>);
+			this._Customer = default(EntityRef<Customer>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Payment_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Customer_Payment_ID
+		{
+			get
+			{
+				return this._Customer_Payment_ID;
+			}
+			set
+			{
+				if ((this._Customer_Payment_ID != value))
+				{
+					this.OnCustomer_Payment_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_Payment_ID = value;
+					this.SendPropertyChanged("Customer_Payment_ID");
+					this.OnCustomer_Payment_IDChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ID", DbType="VarChar(50)")]
@@ -480,164 +711,165 @@ namespace Shop_data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Cart_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Menthod_Code", DbType="Char(2)")]
+		public string Payment_Menthod_Code
 		{
 			get
 			{
-				return this._Cart_ID;
+				return this._Payment_Menthod_Code;
 			}
 			set
 			{
-				if ((this._Cart_ID != value))
+				if ((this._Payment_Menthod_Code != value))
 				{
-					this.OnCart_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Cart_ID = value;
-					this.SendPropertyChanged("Cart_ID");
-					this.OnCart_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Payment_ID", DbType="Char(7)")]
-		public string Customer_Payment_ID
-		{
-			get
-			{
-				return this._Customer_Payment_ID;
-			}
-			set
-			{
-				if ((this._Customer_Payment_ID != value))
-				{
-					this.OnCustomer_Payment_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_Payment_ID = value;
-					this.SendPropertyChanged("Customer_Payment_ID");
-					this.OnCustomer_Payment_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_time", DbType="DateTime")]
-		public System.Nullable<System.DateTime> Payment_time
-		{
-			get
-			{
-				return this._Payment_time;
-			}
-			set
-			{
-				if ((this._Payment_time != value))
-				{
-					this.OnPayment_timeChanging(value);
-					this.SendPropertyChanging();
-					this._Payment_time = value;
-					this.SendPropertyChanged("Payment_time");
-					this.OnPayment_timeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shipping_Address", DbType="NVarChar(50)")]
-		public string Shipping_Address
-		{
-			get
-			{
-				return this._Shipping_Address;
-			}
-			set
-			{
-				if ((this._Shipping_Address != value))
-				{
-					this.OnShipping_AddressChanging(value);
-					this.SendPropertyChanging();
-					this._Shipping_Address = value;
-					this.SendPropertyChanged("Shipping_Address");
-					this.OnShipping_AddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Requirements", DbType="NVarChar(200)")]
-		public string Customer_Requirements
-		{
-			get
-			{
-				return this._Customer_Requirements;
-			}
-			set
-			{
-				if ((this._Customer_Requirements != value))
-				{
-					this.OnCustomer_RequirementsChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_Requirements = value;
-					this.SendPropertyChanged("Customer_Requirements");
-					this.OnCustomer_RequirementsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_Status", DbType="Int")]
-		public System.Nullable<int> Cart_Status
-		{
-			get
-			{
-				return this._Cart_Status;
-			}
-			set
-			{
-				if ((this._Cart_Status != value))
-				{
-					this.OnCart_StatusChanging(value);
-					this.SendPropertyChanging();
-					this._Cart_Status = value;
-					this.SendPropertyChanged("Cart_Status");
-					this.OnCart_StatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Driver_ID", DbType="VarChar(50)")]
-		public string Driver_ID
-		{
-			get
-			{
-				return this._Driver_ID;
-			}
-			set
-			{
-				if ((this._Driver_ID != value))
-				{
-					if (this._Driver.HasLoadedOrAssignedValue)
+					if (this._Payment_Method.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnDriver_IDChanging(value);
+					this.OnPayment_Menthod_CodeChanging(value);
 					this.SendPropertyChanging();
-					this._Driver_ID = value;
-					this.SendPropertyChanged("Driver_ID");
-					this.OnDriver_IDChanged();
+					this._Payment_Menthod_Code = value;
+					this.SendPropertyChanged("Payment_Menthod_Code");
+					this.OnPayment_Menthod_CodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Cart_Item", Storage="_Cart_Items", ThisKey="Cart_ID", OtherKey="Cart_ID")]
-		public EntitySet<Cart_Item> Cart_Items
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Card_Number", DbType="Char(16)")]
+		public string Card_Number
 		{
 			get
 			{
-				return this._Cart_Items;
+				return this._Card_Number;
 			}
 			set
 			{
-				this._Cart_Items.Assign(value);
+				if ((this._Card_Number != value))
+				{
+					this.OnCard_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Card_Number = value;
+					this.SendPropertyChanged("Card_Number");
+					this.OnCard_NumberChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Cart", Storage="_Customer", ThisKey="Customer_ID", OtherKey="Customer_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expmonth", DbType="Char(2)")]
+		public string Expmonth
+		{
+			get
+			{
+				return this._Expmonth;
+			}
+			set
+			{
+				if ((this._Expmonth != value))
+				{
+					this.OnExpmonthChanging(value);
+					this.SendPropertyChanging();
+					this._Expmonth = value;
+					this.SendPropertyChanged("Expmonth");
+					this.OnExpmonthChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Expyear", DbType="Char(4)")]
+		public string Expyear
+		{
+			get
+			{
+				return this._Expyear;
+			}
+			set
+			{
+				if ((this._Expyear != value))
+				{
+					this.OnExpyearChanging(value);
+					this.SendPropertyChanging();
+					this._Expyear = value;
+					this.SendPropertyChanged("Expyear");
+					this.OnExpyearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CVV", DbType="Char(3)")]
+		public string CVV
+		{
+			get
+			{
+				return this._CVV;
+			}
+			set
+			{
+				if ((this._CVV != value))
+				{
+					this.OnCVVChanging(value);
+					this.SendPropertyChanging();
+					this._CVV = value;
+					this.SendPropertyChanged("CVV");
+					this.OnCVVChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Card_Name", DbType="VarChar(25)")]
+		public string Card_Name
+		{
+			get
+			{
+				return this._Card_Name;
+			}
+			set
+			{
+				if ((this._Card_Name != value))
+				{
+					this.OnCard_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Card_Name = value;
+					this.SendPropertyChanged("Card_Name");
+					this.OnCard_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Method_Customer_Payment_Method", Storage="_Payment_Method", ThisKey="Payment_Menthod_Code", OtherKey="Payment_Method_Code", IsForeignKey=true)]
+		public Payment_Method Payment_Method
+		{
+			get
+			{
+				return this._Payment_Method.Entity;
+			}
+			set
+			{
+				Payment_Method previousValue = this._Payment_Method.Entity;
+				if (((previousValue != value) 
+							|| (this._Payment_Method.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Payment_Method.Entity = null;
+						previousValue.Customer_Payment_Methods.Remove(this);
+					}
+					this._Payment_Method.Entity = value;
+					if ((value != null))
+					{
+						value.Customer_Payment_Methods.Add(this);
+						this._Payment_Menthod_Code = value.Payment_Method_Code;
+					}
+					else
+					{
+						this._Payment_Menthod_Code = default(string);
+					}
+					this.SendPropertyChanged("Payment_Method");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Customer_Payment_Method", Storage="_Customer", ThisKey="Customer_ID", OtherKey="Customer_ID", IsForeignKey=true)]
 		public Customer Customer
 		{
 			get
@@ -654,12 +886,12 @@ namespace Shop_data
 					if ((previousValue != null))
 					{
 						this._Customer.Entity = null;
-						previousValue.Carts.Remove(this);
+						previousValue.Customer_Payment_Methods.Remove(this);
 					}
 					this._Customer.Entity = value;
 					if ((value != null))
 					{
-						value.Carts.Add(this);
+						value.Customer_Payment_Methods.Add(this);
 						this._Customer_ID = value.Customer_ID;
 					}
 					else
@@ -671,292 +903,6 @@ namespace Shop_data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Driver_Cart", Storage="_Driver", ThisKey="Driver_ID", OtherKey="Driver_ID", IsForeignKey=true)]
-		public Driver Driver
-		{
-			get
-			{
-				return this._Driver.Entity;
-			}
-			set
-			{
-				Driver previousValue = this._Driver.Entity;
-				if (((previousValue != value) 
-							|| (this._Driver.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Driver.Entity = null;
-						previousValue.Carts.Remove(this);
-					}
-					this._Driver.Entity = value;
-					if ((value != null))
-					{
-						value.Carts.Add(this);
-						this._Driver_ID = value.Driver_ID;
-					}
-					else
-					{
-						this._Driver_ID = default(string);
-					}
-					this.SendPropertyChanged("Driver");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Cart_Items(Cart_Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = this;
-		}
-		
-		private void detach_Cart_Items(Cart_Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cart = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart_Item")]
-	public partial class Cart_Item : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Cake_ID;
-		
-		private int _Cart_ID;
-		
-		private System.Nullable<int> _Quantity;
-		
-		private System.Nullable<double> _Price;
-		
-		private string _Orther;
-		
-		private EntityRef<Cart> _Cart;
-		
-		private EntityRef<Cake> _Cake;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCake_IDChanging(string value);
-    partial void OnCake_IDChanged();
-    partial void OnCart_IDChanging(int value);
-    partial void OnCart_IDChanged();
-    partial void OnQuantityChanging(System.Nullable<int> value);
-    partial void OnQuantityChanged();
-    partial void OnPriceChanging(System.Nullable<double> value);
-    partial void OnPriceChanged();
-    partial void OnOrtherChanging(string value);
-    partial void OnOrtherChanged();
-    #endregion
-		
-		public Cart_Item()
-		{
-			this._Cart = default(EntityRef<Cart>);
-			this._Cake = default(EntityRef<Cake>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Cake_ID
-		{
-			get
-			{
-				return this._Cake_ID;
-			}
-			set
-			{
-				if ((this._Cake_ID != value))
-				{
-					if (this._Cake.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCake_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Cake_ID = value;
-					this.SendPropertyChanged("Cake_ID");
-					this.OnCake_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Cart_ID
-		{
-			get
-			{
-				return this._Cart_ID;
-			}
-			set
-			{
-				if ((this._Cart_ID != value))
-				{
-					if (this._Cart.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCart_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Cart_ID = value;
-					this.SendPropertyChanged("Cart_ID");
-					this.OnCart_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
-		public System.Nullable<int> Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this.OnQuantityChanging(value);
-					this.SendPropertyChanging();
-					this._Quantity = value;
-					this.SendPropertyChanged("Quantity");
-					this.OnQuantityChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float")]
-		public System.Nullable<double> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orther", DbType="NVarChar(MAX)")]
-		public string Orther
-		{
-			get
-			{
-				return this._Orther;
-			}
-			set
-			{
-				if ((this._Orther != value))
-				{
-					this.OnOrtherChanging(value);
-					this.SendPropertyChanging();
-					this._Orther = value;
-					this.SendPropertyChanged("Orther");
-					this.OnOrtherChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Cart_Item", Storage="_Cart", ThisKey="Cart_ID", OtherKey="Cart_ID", IsForeignKey=true)]
-		public Cart Cart
-		{
-			get
-			{
-				return this._Cart.Entity;
-			}
-			set
-			{
-				Cart previousValue = this._Cart.Entity;
-				if (((previousValue != value) 
-							|| (this._Cart.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cart.Entity = null;
-						previousValue.Cart_Items.Remove(this);
-					}
-					this._Cart.Entity = value;
-					if ((value != null))
-					{
-						value.Cart_Items.Add(this);
-						this._Cart_ID = value.Cart_ID;
-					}
-					else
-					{
-						this._Cart_ID = default(int);
-					}
-					this.SendPropertyChanged("Cart");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cart_Item", Storage="_Cake", ThisKey="Cake_ID", OtherKey="Cake_ID", IsForeignKey=true)]
-		public Cake Cake
-		{
-			get
-			{
-				return this._Cake.Entity;
-			}
-			set
-			{
-				Cake previousValue = this._Cake.Entity;
-				if (((previousValue != value) 
-							|| (this._Cake.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Cake.Entity = null;
-						previousValue.Cart_Items.Remove(this);
-					}
-					this._Cake.Entity = value;
-					if ((value != null))
-					{
-						value.Cart_Items.Add(this);
-						this._Cake_ID = value.Cake_ID;
-					}
-					else
-					{
-						this._Cake_ID = default(string);
-					}
-					this.SendPropertyChanged("Cake");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -978,17 +924,27 @@ namespace Shop_data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Chef")]
-	public partial class Chef : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
+	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Chef_ID;
+		private string _Customer_ID;
 		
-		private string _Chef_Name;
+		private string _Customer_Name;
 		
-		private string _Chef_Phone;
+		private string _Customer_Phone;
+		
+		private string _Customer_Email;
+		
+		private string _Customer_Adress;
+		
+		private EntitySet<Customer_Payment_Method> _Customer_Payment_Methods;
+		
+		private EntitySet<COMMENT> _COMMENTs;
+		
+		private EntitySet<Cart> _Carts;
 		
 		private EntityRef<LoginSystem> _LoginSystem;
 		
@@ -996,85 +952,171 @@ namespace Shop_data
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnChef_IDChanging(string value);
-    partial void OnChef_IDChanged();
-    partial void OnChef_NameChanging(string value);
-    partial void OnChef_NameChanged();
-    partial void OnChef_PhoneChanging(string value);
-    partial void OnChef_PhoneChanged();
+    partial void OnCustomer_IDChanging(string value);
+    partial void OnCustomer_IDChanged();
+    partial void OnCustomer_NameChanging(string value);
+    partial void OnCustomer_NameChanged();
+    partial void OnCustomer_PhoneChanging(string value);
+    partial void OnCustomer_PhoneChanged();
+    partial void OnCustomer_EmailChanging(string value);
+    partial void OnCustomer_EmailChanged();
+    partial void OnCustomer_AdressChanging(string value);
+    partial void OnCustomer_AdressChanged();
     #endregion
 		
-		public Chef()
+		public Customer()
 		{
+			this._Customer_Payment_Methods = new EntitySet<Customer_Payment_Method>(new Action<Customer_Payment_Method>(this.attach_Customer_Payment_Methods), new Action<Customer_Payment_Method>(this.detach_Customer_Payment_Methods));
+			this._COMMENTs = new EntitySet<COMMENT>(new Action<COMMENT>(this.attach_COMMENTs), new Action<COMMENT>(this.detach_COMMENTs));
+			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
 			this._LoginSystem = default(EntityRef<LoginSystem>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chef_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Chef_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Customer_ID
 		{
 			get
 			{
-				return this._Chef_ID;
+				return this._Customer_ID;
 			}
 			set
 			{
-				if ((this._Chef_ID != value))
+				if ((this._Customer_ID != value))
 				{
 					if (this._LoginSystem.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnChef_IDChanging(value);
+					this.OnCustomer_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Chef_ID = value;
-					this.SendPropertyChanged("Chef_ID");
-					this.OnChef_IDChanged();
+					this._Customer_ID = value;
+					this.SendPropertyChanged("Customer_ID");
+					this.OnCustomer_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chef_Name", DbType="NVarChar(30)")]
-		public string Chef_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Name", DbType="NVarChar(20)")]
+		public string Customer_Name
 		{
 			get
 			{
-				return this._Chef_Name;
+				return this._Customer_Name;
 			}
 			set
 			{
-				if ((this._Chef_Name != value))
+				if ((this._Customer_Name != value))
 				{
-					this.OnChef_NameChanging(value);
+					this.OnCustomer_NameChanging(value);
 					this.SendPropertyChanging();
-					this._Chef_Name = value;
-					this.SendPropertyChanged("Chef_Name");
-					this.OnChef_NameChanged();
+					this._Customer_Name = value;
+					this.SendPropertyChanged("Customer_Name");
+					this.OnCustomer_NameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chef_Phone", DbType="Char(12)")]
-		public string Chef_Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Phone", DbType="Char(12)")]
+		public string Customer_Phone
 		{
 			get
 			{
-				return this._Chef_Phone;
+				return this._Customer_Phone;
 			}
 			set
 			{
-				if ((this._Chef_Phone != value))
+				if ((this._Customer_Phone != value))
 				{
-					this.OnChef_PhoneChanging(value);
+					this.OnCustomer_PhoneChanging(value);
 					this.SendPropertyChanging();
-					this._Chef_Phone = value;
-					this.SendPropertyChanged("Chef_Phone");
-					this.OnChef_PhoneChanged();
+					this._Customer_Phone = value;
+					this.SendPropertyChanged("Customer_Phone");
+					this.OnCustomer_PhoneChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Chef", Storage="_LoginSystem", ThisKey="Chef_ID", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Email", DbType="VarChar(30)")]
+		public string Customer_Email
+		{
+			get
+			{
+				return this._Customer_Email;
+			}
+			set
+			{
+				if ((this._Customer_Email != value))
+				{
+					this.OnCustomer_EmailChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_Email = value;
+					this.SendPropertyChanged("Customer_Email");
+					this.OnCustomer_EmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Adress", DbType="NVarChar(MAX)")]
+		public string Customer_Adress
+		{
+			get
+			{
+				return this._Customer_Adress;
+			}
+			set
+			{
+				if ((this._Customer_Adress != value))
+				{
+					this.OnCustomer_AdressChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_Adress = value;
+					this.SendPropertyChanged("Customer_Adress");
+					this.OnCustomer_AdressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Customer_Payment_Method", Storage="_Customer_Payment_Methods", ThisKey="Customer_ID", OtherKey="Customer_ID")]
+		public EntitySet<Customer_Payment_Method> Customer_Payment_Methods
+		{
+			get
+			{
+				return this._Customer_Payment_Methods;
+			}
+			set
+			{
+				this._Customer_Payment_Methods.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_COMMENT", Storage="_COMMENTs", ThisKey="Customer_ID", OtherKey="Customer_ID")]
+		public EntitySet<COMMENT> COMMENTs
+		{
+			get
+			{
+				return this._COMMENTs;
+			}
+			set
+			{
+				this._COMMENTs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Cart", Storage="_Carts", ThisKey="Customer_ID", OtherKey="Customer_ID")]
+		public EntitySet<Cart> Carts
+		{
+			get
+			{
+				return this._Carts;
+			}
+			set
+			{
+				this._Carts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Customer", Storage="_LoginSystem", ThisKey="Customer_ID", OtherKey="ID", IsForeignKey=true)]
 		public LoginSystem LoginSystem
 		{
 			get
@@ -1091,17 +1133,17 @@ namespace Shop_data
 					if ((previousValue != null))
 					{
 						this._LoginSystem.Entity = null;
-						previousValue.Chef = null;
+						previousValue.Customer = null;
 					}
 					this._LoginSystem.Entity = value;
 					if ((value != null))
 					{
-						value.Chef = this;
-						this._Chef_ID = value.ID;
+						value.Customer = this;
+						this._Customer_ID = value.ID;
 					}
 					else
 					{
-						this._Chef_ID = default(string);
+						this._Customer_ID = default(string);
 					}
 					this.SendPropertyChanged("LoginSystem");
 				}
@@ -1126,6 +1168,42 @@ namespace Shop_data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
+		}
+		
+		private void attach_COMMENTs(COMMENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_COMMENTs(COMMENT entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
+		}
+		
+		private void attach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = this;
+		}
+		
+		private void detach_Carts(Cart entity)
+		{
+			this.SendPropertyChanging();
+			entity.Customer = null;
 		}
 	}
 	
@@ -1369,228 +1447,221 @@ namespace Shop_data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer")]
-	public partial class Customer : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart_Item")]
+	public partial class Cart_Item : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Customer_ID;
+		private string _Cake_ID;
 		
-		private string _Customer_Name;
+		private int _Cart_ID;
 		
-		private string _Customer_Phone;
+		private System.Nullable<int> _Quantity;
 		
-		private string _Customer_Email;
+		private System.Nullable<double> _Price;
 		
-		private string _Customer_Adress;
+		private string _Orther;
 		
-		private EntitySet<Cart> _Carts;
+		private EntityRef<Cart> _Cart;
 		
-		private EntitySet<COMMENT> _COMMENTs;
-		
-		private EntitySet<Customer_Payment_Method> _Customer_Payment_Methods;
-		
-		private EntityRef<LoginSystem> _LoginSystem;
+		private EntityRef<Cake> _Cake;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCustomer_IDChanging(string value);
-    partial void OnCustomer_IDChanged();
-    partial void OnCustomer_NameChanging(string value);
-    partial void OnCustomer_NameChanged();
-    partial void OnCustomer_PhoneChanging(string value);
-    partial void OnCustomer_PhoneChanged();
-    partial void OnCustomer_EmailChanging(string value);
-    partial void OnCustomer_EmailChanged();
-    partial void OnCustomer_AdressChanging(string value);
-    partial void OnCustomer_AdressChanged();
+    partial void OnCake_IDChanging(string value);
+    partial void OnCake_IDChanged();
+    partial void OnCart_IDChanging(int value);
+    partial void OnCart_IDChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnPriceChanging(System.Nullable<double> value);
+    partial void OnPriceChanged();
+    partial void OnOrtherChanging(string value);
+    partial void OnOrtherChanged();
     #endregion
 		
-		public Customer()
+		public Cart_Item()
 		{
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
-			this._COMMENTs = new EntitySet<COMMENT>(new Action<COMMENT>(this.attach_COMMENTs), new Action<COMMENT>(this.detach_COMMENTs));
-			this._Customer_Payment_Methods = new EntitySet<Customer_Payment_Method>(new Action<Customer_Payment_Method>(this.attach_Customer_Payment_Methods), new Action<Customer_Payment_Method>(this.detach_Customer_Payment_Methods));
-			this._LoginSystem = default(EntityRef<LoginSystem>);
+			this._Cart = default(EntityRef<Cart>);
+			this._Cake = default(EntityRef<Cake>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Customer_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Cake_ID
 		{
 			get
 			{
-				return this._Customer_ID;
+				return this._Cake_ID;
 			}
 			set
 			{
-				if ((this._Customer_ID != value))
+				if ((this._Cake_ID != value))
 				{
-					if (this._LoginSystem.HasLoadedOrAssignedValue)
+					if (this._Cake.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnCustomer_IDChanging(value);
+					this.OnCake_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Customer_ID = value;
-					this.SendPropertyChanged("Customer_ID");
-					this.OnCustomer_IDChanged();
+					this._Cake_ID = value;
+					this.SendPropertyChanged("Cake_ID");
+					this.OnCake_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Name", DbType="NVarChar(20)")]
-		public string Customer_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Cart_ID
 		{
 			get
 			{
-				return this._Customer_Name;
+				return this._Cart_ID;
 			}
 			set
 			{
-				if ((this._Customer_Name != value))
+				if ((this._Cart_ID != value))
 				{
-					this.OnCustomer_NameChanging(value);
+					if (this._Cart.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCart_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Customer_Name = value;
-					this.SendPropertyChanged("Customer_Name");
-					this.OnCustomer_NameChanged();
+					this._Cart_ID = value;
+					this.SendPropertyChanged("Cart_ID");
+					this.OnCart_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Phone", DbType="Char(12)")]
-		public string Customer_Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
 		{
 			get
 			{
-				return this._Customer_Phone;
+				return this._Quantity;
 			}
 			set
 			{
-				if ((this._Customer_Phone != value))
+				if ((this._Quantity != value))
 				{
-					this.OnCustomer_PhoneChanging(value);
+					this.OnQuantityChanging(value);
 					this.SendPropertyChanging();
-					this._Customer_Phone = value;
-					this.SendPropertyChanged("Customer_Phone");
-					this.OnCustomer_PhoneChanged();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Email", DbType="VarChar(30)")]
-		public string Customer_Email
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Float")]
+		public System.Nullable<double> Price
 		{
 			get
 			{
-				return this._Customer_Email;
+				return this._Price;
 			}
 			set
 			{
-				if ((this._Customer_Email != value))
+				if ((this._Price != value))
 				{
-					this.OnCustomer_EmailChanging(value);
+					this.OnPriceChanging(value);
 					this.SendPropertyChanging();
-					this._Customer_Email = value;
-					this.SendPropertyChanged("Customer_Email");
-					this.OnCustomer_EmailChanged();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Adress", DbType="NVarChar(MAX)")]
-		public string Customer_Adress
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Orther", DbType="NVarChar(MAX)")]
+		public string Orther
 		{
 			get
 			{
-				return this._Customer_Adress;
+				return this._Orther;
 			}
 			set
 			{
-				if ((this._Customer_Adress != value))
+				if ((this._Orther != value))
 				{
-					this.OnCustomer_AdressChanging(value);
+					this.OnOrtherChanging(value);
 					this.SendPropertyChanging();
-					this._Customer_Adress = value;
-					this.SendPropertyChanged("Customer_Adress");
-					this.OnCustomer_AdressChanged();
+					this._Orther = value;
+					this.SendPropertyChanged("Orther");
+					this.OnOrtherChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Cart", Storage="_Carts", ThisKey="Customer_ID", OtherKey="Customer_ID")]
-		public EntitySet<Cart> Carts
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Cart_Item", Storage="_Cart", ThisKey="Cart_ID", OtherKey="Cart_ID", IsForeignKey=true)]
+		public Cart Cart
 		{
 			get
 			{
-				return this._Carts;
+				return this._Cart.Entity;
 			}
 			set
 			{
-				this._Carts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_COMMENT", Storage="_COMMENTs", ThisKey="Customer_ID", OtherKey="Customer_ID")]
-		public EntitySet<COMMENT> COMMENTs
-		{
-			get
-			{
-				return this._COMMENTs;
-			}
-			set
-			{
-				this._COMMENTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Customer_Payment_Method", Storage="_Customer_Payment_Methods", ThisKey="Customer_ID", OtherKey="Customer_ID")]
-		public EntitySet<Customer_Payment_Method> Customer_Payment_Methods
-		{
-			get
-			{
-				return this._Customer_Payment_Methods;
-			}
-			set
-			{
-				this._Customer_Payment_Methods.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Customer", Storage="_LoginSystem", ThisKey="Customer_ID", OtherKey="ID", IsForeignKey=true)]
-		public LoginSystem LoginSystem
-		{
-			get
-			{
-				return this._LoginSystem.Entity;
-			}
-			set
-			{
-				LoginSystem previousValue = this._LoginSystem.Entity;
+				Cart previousValue = this._Cart.Entity;
 				if (((previousValue != value) 
-							|| (this._LoginSystem.HasLoadedOrAssignedValue == false)))
+							|| (this._Cart.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._LoginSystem.Entity = null;
-						previousValue.Customer = null;
+						this._Cart.Entity = null;
+						previousValue.Cart_Items.Remove(this);
 					}
-					this._LoginSystem.Entity = value;
+					this._Cart.Entity = value;
 					if ((value != null))
 					{
-						value.Customer = this;
-						this._Customer_ID = value.ID;
+						value.Cart_Items.Add(this);
+						this._Cart_ID = value.Cart_ID;
 					}
 					else
 					{
-						this._Customer_ID = default(string);
+						this._Cart_ID = default(int);
 					}
-					this.SendPropertyChanged("LoginSystem");
+					this.SendPropertyChanged("Cart");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cart_Item", Storage="_Cake", ThisKey="Cake_ID", OtherKey="Cake_ID", IsForeignKey=true)]
+		public Cake Cake
+		{
+			get
+			{
+				return this._Cake.Entity;
+			}
+			set
+			{
+				Cake previousValue = this._Cake.Entity;
+				if (((previousValue != value) 
+							|| (this._Cake.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cake.Entity = null;
+						previousValue.Cart_Items.Remove(this);
+					}
+					this._Cake.Entity = value;
+					if ((value != null))
+					{
+						value.Cart_Items.Add(this);
+						this._Cake_ID = value.Cake_ID;
+					}
+					else
+					{
+						this._Cake_ID = default(string);
+					}
+					this.SendPropertyChanged("Cake");
 				}
 			}
 		}
@@ -1614,109 +1685,69 @@ namespace Shop_data
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_Carts(Cart entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
-		
-		private void attach_COMMENTs(COMMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_COMMENTs(COMMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
-		
-		private void attach_Customer_Payment_Methods(Customer_Payment_Method entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = this;
-		}
-		
-		private void detach_Customer_Payment_Methods(Customer_Payment_Method entity)
-		{
-			this.SendPropertyChanging();
-			entity.Customer = null;
-		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Customer_Payment_Methods")]
-	public partial class Customer_Payment_Method : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cart")]
+	public partial class Cart : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Customer_Payment_ID;
-		
 		private string _Customer_ID;
 		
-		private string _Payment_Menthod_Code;
+		private int _Cart_ID;
 		
-		private string _Card_Number;
+		private string _Customer_Payment_ID;
 		
-		private string _Date_from;
+		private System.Nullable<System.DateTime> _Payment_time;
 		
-		private string _Date_to;
+		private string _Shipping_Name;
+		
+		private string _Shipping_Address;
+		
+		private string _Shipping_Phone;
+		
+		private string _Shipping_Email;
+		
+		private string _Customer_Requirements;
+		
+		private System.Nullable<int> _Cart_Status;
+		
+		private EntitySet<Cart_Item> _Cart_Items;
 		
 		private EntityRef<Customer> _Customer;
-		
-		private EntityRef<Payment_Method> _Payment_Method;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnCustomer_Payment_IDChanging(string value);
-    partial void OnCustomer_Payment_IDChanged();
     partial void OnCustomer_IDChanging(string value);
     partial void OnCustomer_IDChanged();
-    partial void OnPayment_Menthod_CodeChanging(string value);
-    partial void OnPayment_Menthod_CodeChanged();
-    partial void OnCard_NumberChanging(string value);
-    partial void OnCard_NumberChanged();
-    partial void OnDate_fromChanging(string value);
-    partial void OnDate_fromChanged();
-    partial void OnDate_toChanging(string value);
-    partial void OnDate_toChanged();
+    partial void OnCart_IDChanging(int value);
+    partial void OnCart_IDChanged();
+    partial void OnCustomer_Payment_IDChanging(string value);
+    partial void OnCustomer_Payment_IDChanged();
+    partial void OnPayment_timeChanging(System.Nullable<System.DateTime> value);
+    partial void OnPayment_timeChanged();
+    partial void OnShipping_NameChanging(string value);
+    partial void OnShipping_NameChanged();
+    partial void OnShipping_AddressChanging(string value);
+    partial void OnShipping_AddressChanged();
+    partial void OnShipping_PhoneChanging(string value);
+    partial void OnShipping_PhoneChanged();
+    partial void OnShipping_EmailChanging(string value);
+    partial void OnShipping_EmailChanged();
+    partial void OnCustomer_RequirementsChanging(string value);
+    partial void OnCustomer_RequirementsChanged();
+    partial void OnCart_StatusChanging(System.Nullable<int> value);
+    partial void OnCart_StatusChanged();
     #endregion
 		
-		public Customer_Payment_Method()
+		public Cart()
 		{
+			this._Cart_Items = new EntitySet<Cart_Item>(new Action<Cart_Item>(this.attach_Cart_Items), new Action<Cart_Item>(this.detach_Cart_Items));
 			this._Customer = default(EntityRef<Customer>);
-			this._Payment_Method = default(EntityRef<Payment_Method>);
 			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Payment_ID", DbType="Char(7) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Customer_Payment_ID
-		{
-			get
-			{
-				return this._Customer_Payment_ID;
-			}
-			set
-			{
-				if ((this._Customer_Payment_ID != value))
-				{
-					this.OnCustomer_Payment_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Customer_Payment_ID = value;
-					this.SendPropertyChanged("Customer_Payment_ID");
-					this.OnCustomer_Payment_IDChanged();
-				}
-			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ID", DbType="VarChar(50)")]
@@ -1743,91 +1774,200 @@ namespace Shop_data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Menthod_Code", DbType="Char(2)")]
-		public string Payment_Menthod_Code
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Cart_ID
 		{
 			get
 			{
-				return this._Payment_Menthod_Code;
+				return this._Cart_ID;
 			}
 			set
 			{
-				if ((this._Payment_Menthod_Code != value))
+				if ((this._Cart_ID != value))
 				{
-					if (this._Payment_Method.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnPayment_Menthod_CodeChanging(value);
+					this.OnCart_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Payment_Menthod_Code = value;
-					this.SendPropertyChanged("Payment_Menthod_Code");
-					this.OnPayment_Menthod_CodeChanged();
+					this._Cart_ID = value;
+					this.SendPropertyChanged("Cart_ID");
+					this.OnCart_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Card_Number", DbType="Char(16)")]
-		public string Card_Number
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Payment_ID", DbType="Char(7)")]
+		public string Customer_Payment_ID
 		{
 			get
 			{
-				return this._Card_Number;
+				return this._Customer_Payment_ID;
 			}
 			set
 			{
-				if ((this._Card_Number != value))
+				if ((this._Customer_Payment_ID != value))
 				{
-					this.OnCard_NumberChanging(value);
+					this.OnCustomer_Payment_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Card_Number = value;
-					this.SendPropertyChanged("Card_Number");
-					this.OnCard_NumberChanged();
+					this._Customer_Payment_ID = value;
+					this.SendPropertyChanged("Customer_Payment_ID");
+					this.OnCustomer_Payment_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_from", DbType="Char(4)")]
-		public string Date_from
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_time", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Payment_time
 		{
 			get
 			{
-				return this._Date_from;
+				return this._Payment_time;
 			}
 			set
 			{
-				if ((this._Date_from != value))
+				if ((this._Payment_time != value))
 				{
-					this.OnDate_fromChanging(value);
+					this.OnPayment_timeChanging(value);
 					this.SendPropertyChanging();
-					this._Date_from = value;
-					this.SendPropertyChanged("Date_from");
-					this.OnDate_fromChanged();
+					this._Payment_time = value;
+					this.SendPropertyChanged("Payment_time");
+					this.OnPayment_timeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date_to", DbType="Char(4)")]
-		public string Date_to
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shipping_Name", DbType="NVarChar(50)")]
+		public string Shipping_Name
 		{
 			get
 			{
-				return this._Date_to;
+				return this._Shipping_Name;
 			}
 			set
 			{
-				if ((this._Date_to != value))
+				if ((this._Shipping_Name != value))
 				{
-					this.OnDate_toChanging(value);
+					this.OnShipping_NameChanging(value);
 					this.SendPropertyChanging();
-					this._Date_to = value;
-					this.SendPropertyChanged("Date_to");
-					this.OnDate_toChanged();
+					this._Shipping_Name = value;
+					this.SendPropertyChanged("Shipping_Name");
+					this.OnShipping_NameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Customer_Payment_Method", Storage="_Customer", ThisKey="Customer_ID", OtherKey="Customer_ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shipping_Address", DbType="NVarChar(50)")]
+		public string Shipping_Address
+		{
+			get
+			{
+				return this._Shipping_Address;
+			}
+			set
+			{
+				if ((this._Shipping_Address != value))
+				{
+					this.OnShipping_AddressChanging(value);
+					this.SendPropertyChanging();
+					this._Shipping_Address = value;
+					this.SendPropertyChanged("Shipping_Address");
+					this.OnShipping_AddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shipping_Phone", DbType="NVarChar(50)")]
+		public string Shipping_Phone
+		{
+			get
+			{
+				return this._Shipping_Phone;
+			}
+			set
+			{
+				if ((this._Shipping_Phone != value))
+				{
+					this.OnShipping_PhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Shipping_Phone = value;
+					this.SendPropertyChanged("Shipping_Phone");
+					this.OnShipping_PhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shipping_Email", DbType="NVarChar(50)")]
+		public string Shipping_Email
+		{
+			get
+			{
+				return this._Shipping_Email;
+			}
+			set
+			{
+				if ((this._Shipping_Email != value))
+				{
+					this.OnShipping_EmailChanging(value);
+					this.SendPropertyChanging();
+					this._Shipping_Email = value;
+					this.SendPropertyChanged("Shipping_Email");
+					this.OnShipping_EmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_Requirements", DbType="NVarChar(200)")]
+		public string Customer_Requirements
+		{
+			get
+			{
+				return this._Customer_Requirements;
+			}
+			set
+			{
+				if ((this._Customer_Requirements != value))
+				{
+					this.OnCustomer_RequirementsChanging(value);
+					this.SendPropertyChanging();
+					this._Customer_Requirements = value;
+					this.SendPropertyChanged("Customer_Requirements");
+					this.OnCustomer_RequirementsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cart_Status", DbType="Int")]
+		public System.Nullable<int> Cart_Status
+		{
+			get
+			{
+				return this._Cart_Status;
+			}
+			set
+			{
+				if ((this._Cart_Status != value))
+				{
+					this.OnCart_StatusChanging(value);
+					this.SendPropertyChanging();
+					this._Cart_Status = value;
+					this.SendPropertyChanged("Cart_Status");
+					this.OnCart_StatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cart_Cart_Item", Storage="_Cart_Items", ThisKey="Cart_ID", OtherKey="Cart_ID")]
+		public EntitySet<Cart_Item> Cart_Items
+		{
+			get
+			{
+				return this._Cart_Items;
+			}
+			set
+			{
+				this._Cart_Items.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Customer_Cart", Storage="_Customer", ThisKey="Customer_ID", OtherKey="Customer_ID", IsForeignKey=true)]
 		public Customer Customer
 		{
 			get
@@ -1844,12 +1984,12 @@ namespace Shop_data
 					if ((previousValue != null))
 					{
 						this._Customer.Entity = null;
-						previousValue.Customer_Payment_Methods.Remove(this);
+						previousValue.Carts.Remove(this);
 					}
 					this._Customer.Entity = value;
 					if ((value != null))
 					{
-						value.Customer_Payment_Methods.Add(this);
+						value.Carts.Add(this);
 						this._Customer_ID = value.Customer_ID;
 					}
 					else
@@ -1861,40 +2001,6 @@ namespace Shop_data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Method_Customer_Payment_Method", Storage="_Payment_Method", ThisKey="Payment_Menthod_Code", OtherKey="Payment_Method_Code", IsForeignKey=true)]
-		public Payment_Method Payment_Method
-		{
-			get
-			{
-				return this._Payment_Method.Entity;
-			}
-			set
-			{
-				Payment_Method previousValue = this._Payment_Method.Entity;
-				if (((previousValue != value) 
-							|| (this._Payment_Method.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Payment_Method.Entity = null;
-						previousValue.Customer_Payment_Methods.Remove(this);
-					}
-					this._Payment_Method.Entity = value;
-					if ((value != null))
-					{
-						value.Customer_Payment_Methods.Add(this);
-						this._Payment_Menthod_Code = value.Payment_Method_Code;
-					}
-					else
-					{
-						this._Payment_Menthod_Code = default(string);
-					}
-					this.SendPropertyChanged("Payment_Method");
-				}
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1914,150 +2020,338 @@ namespace Shop_data
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_Cart_Items(Cart_Item entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = this;
+		}
+		
+		private void detach_Cart_Items(Cart_Item entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cart = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Driver")]
-	public partial class Driver : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cakes")]
+	public partial class Cake : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _Driver_ID;
+		private string _Cake_ID;
 		
-		private string _Driver_Name;
+		private string _Cake_Name;
 		
-		private string _Driver_Phone;
+		private string _Cake_Type_Code;
 		
-		private EntitySet<Cart> _Carts;
+		private System.Nullable<double> _Cake_Price;
 		
-		private EntityRef<LoginSystem> _LoginSystem;
+		private System.Nullable<double> _Discount;
+		
+		private string _Cake_decripsion;
+		
+		private System.Nullable<int> _Amount;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private System.Nullable<int> _Sold;
+		
+		private EntitySet<COMMENT> _COMMENTs;
+		
+		private EntitySet<Cart_Item> _Cart_Items;
+		
+		private EntitySet<Cake_Image> _Cake_Images;
+		
+		private EntityRef<Cake_Type> _Cake_Type;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnDriver_IDChanging(string value);
-    partial void OnDriver_IDChanged();
-    partial void OnDriver_NameChanging(string value);
-    partial void OnDriver_NameChanged();
-    partial void OnDriver_PhoneChanging(string value);
-    partial void OnDriver_PhoneChanged();
+    partial void OnCake_IDChanging(string value);
+    partial void OnCake_IDChanged();
+    partial void OnCake_NameChanging(string value);
+    partial void OnCake_NameChanged();
+    partial void OnCake_Type_CodeChanging(string value);
+    partial void OnCake_Type_CodeChanged();
+    partial void OnCake_PriceChanging(System.Nullable<double> value);
+    partial void OnCake_PriceChanged();
+    partial void OnDiscountChanging(System.Nullable<double> value);
+    partial void OnDiscountChanged();
+    partial void OnCake_decripsionChanging(string value);
+    partial void OnCake_decripsionChanged();
+    partial void OnAmountChanging(System.Nullable<int> value);
+    partial void OnAmountChanged();
+    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnCreateDateChanged();
+    partial void OnSoldChanging(System.Nullable<int> value);
+    partial void OnSoldChanged();
     #endregion
 		
-		public Driver()
+		public Cake()
 		{
-			this._Carts = new EntitySet<Cart>(new Action<Cart>(this.attach_Carts), new Action<Cart>(this.detach_Carts));
-			this._LoginSystem = default(EntityRef<LoginSystem>);
+			this._COMMENTs = new EntitySet<COMMENT>(new Action<COMMENT>(this.attach_COMMENTs), new Action<COMMENT>(this.detach_COMMENTs));
+			this._Cart_Items = new EntitySet<Cart_Item>(new Action<Cart_Item>(this.attach_Cart_Items), new Action<Cart_Item>(this.detach_Cart_Items));
+			this._Cake_Images = new EntitySet<Cake_Image>(new Action<Cake_Image>(this.attach_Cake_Images), new Action<Cake_Image>(this.detach_Cake_Images));
+			this._Cake_Type = default(EntityRef<Cake_Type>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Driver_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Driver_ID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Cake_ID
 		{
 			get
 			{
-				return this._Driver_ID;
+				return this._Cake_ID;
 			}
 			set
 			{
-				if ((this._Driver_ID != value))
+				if ((this._Cake_ID != value))
 				{
-					if (this._LoginSystem.HasLoadedOrAssignedValue)
+					this.OnCake_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Cake_ID = value;
+					this.SendPropertyChanged("Cake_ID");
+					this.OnCake_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Name", DbType="NVarChar(50)")]
+		public string Cake_Name
+		{
+			get
+			{
+				return this._Cake_Name;
+			}
+			set
+			{
+				if ((this._Cake_Name != value))
+				{
+					this.OnCake_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Cake_Name = value;
+					this.SendPropertyChanged("Cake_Name");
+					this.OnCake_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Type_Code", DbType="Char(7)")]
+		public string Cake_Type_Code
+		{
+			get
+			{
+				return this._Cake_Type_Code;
+			}
+			set
+			{
+				if ((this._Cake_Type_Code != value))
+				{
+					if (this._Cake_Type.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnDriver_IDChanging(value);
+					this.OnCake_Type_CodeChanging(value);
 					this.SendPropertyChanging();
-					this._Driver_ID = value;
-					this.SendPropertyChanged("Driver_ID");
-					this.OnDriver_IDChanged();
+					this._Cake_Type_Code = value;
+					this.SendPropertyChanged("Cake_Type_Code");
+					this.OnCake_Type_CodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Driver_Name", DbType="NVarChar(30)")]
-		public string Driver_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Price", DbType="Float")]
+		public System.Nullable<double> Cake_Price
 		{
 			get
 			{
-				return this._Driver_Name;
+				return this._Cake_Price;
 			}
 			set
 			{
-				if ((this._Driver_Name != value))
+				if ((this._Cake_Price != value))
 				{
-					this.OnDriver_NameChanging(value);
+					this.OnCake_PriceChanging(value);
 					this.SendPropertyChanging();
-					this._Driver_Name = value;
-					this.SendPropertyChanged("Driver_Name");
-					this.OnDriver_NameChanged();
+					this._Cake_Price = value;
+					this.SendPropertyChanged("Cake_Price");
+					this.OnCake_PriceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Driver_Phone", DbType="Char(12)")]
-		public string Driver_Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float")]
+		public System.Nullable<double> Discount
 		{
 			get
 			{
-				return this._Driver_Phone;
+				return this._Discount;
 			}
 			set
 			{
-				if ((this._Driver_Phone != value))
+				if ((this._Discount != value))
 				{
-					this.OnDriver_PhoneChanging(value);
+					this.OnDiscountChanging(value);
 					this.SendPropertyChanging();
-					this._Driver_Phone = value;
-					this.SendPropertyChanged("Driver_Phone");
-					this.OnDriver_PhoneChanged();
+					this._Discount = value;
+					this.SendPropertyChanged("Discount");
+					this.OnDiscountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Driver_Cart", Storage="_Carts", ThisKey="Driver_ID", OtherKey="Driver_ID")]
-		public EntitySet<Cart> Carts
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_decripsion", DbType="NVarChar(50)")]
+		public string Cake_decripsion
 		{
 			get
 			{
-				return this._Carts;
+				return this._Cake_decripsion;
 			}
 			set
 			{
-				this._Carts.Assign(value);
+				if ((this._Cake_decripsion != value))
+				{
+					this.OnCake_decripsionChanging(value);
+					this.SendPropertyChanging();
+					this._Cake_decripsion = value;
+					this.SendPropertyChanged("Cake_decripsion");
+					this.OnCake_decripsionChanged();
+				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Driver", Storage="_LoginSystem", ThisKey="Driver_ID", OtherKey="ID", IsForeignKey=true)]
-		public LoginSystem LoginSystem
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int")]
+		public System.Nullable<int> Amount
 		{
 			get
 			{
-				return this._LoginSystem.Entity;
+				return this._Amount;
 			}
 			set
 			{
-				LoginSystem previousValue = this._LoginSystem.Entity;
+				if ((this._Amount != value))
+				{
+					this.OnAmountChanging(value);
+					this.SendPropertyChanging();
+					this._Amount = value;
+					this.SendPropertyChanged("Amount");
+					this.OnAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="Date")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold", DbType="Int")]
+		public System.Nullable<int> Sold
+		{
+			get
+			{
+				return this._Sold;
+			}
+			set
+			{
+				if ((this._Sold != value))
+				{
+					this.OnSoldChanging(value);
+					this.SendPropertyChanging();
+					this._Sold = value;
+					this.SendPropertyChanged("Sold");
+					this.OnSoldChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_COMMENT", Storage="_COMMENTs", ThisKey="Cake_ID", OtherKey="Cake_ID")]
+		public EntitySet<COMMENT> COMMENTs
+		{
+			get
+			{
+				return this._COMMENTs;
+			}
+			set
+			{
+				this._COMMENTs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cart_Item", Storage="_Cart_Items", ThisKey="Cake_ID", OtherKey="Cake_ID")]
+		public EntitySet<Cart_Item> Cart_Items
+		{
+			get
+			{
+				return this._Cart_Items;
+			}
+			set
+			{
+				this._Cart_Items.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cake_Image", Storage="_Cake_Images", ThisKey="Cake_ID", OtherKey="Cake_ID")]
+		public EntitySet<Cake_Image> Cake_Images
+		{
+			get
+			{
+				return this._Cake_Images;
+			}
+			set
+			{
+				this._Cake_Images.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Type_Cake", Storage="_Cake_Type", ThisKey="Cake_Type_Code", OtherKey="Cake_Type_Code", IsForeignKey=true)]
+		public Cake_Type Cake_Type
+		{
+			get
+			{
+				return this._Cake_Type.Entity;
+			}
+			set
+			{
+				Cake_Type previousValue = this._Cake_Type.Entity;
 				if (((previousValue != value) 
-							|| (this._LoginSystem.HasLoadedOrAssignedValue == false)))
+							|| (this._Cake_Type.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._LoginSystem.Entity = null;
-						previousValue.Driver = null;
+						this._Cake_Type.Entity = null;
+						previousValue.Cakes.Remove(this);
 					}
-					this._LoginSystem.Entity = value;
+					this._Cake_Type.Entity = value;
 					if ((value != null))
 					{
-						value.Driver = this;
-						this._Driver_ID = value.ID;
+						value.Cakes.Add(this);
+						this._Cake_Type_Code = value.Cake_Type_Code;
 					}
 					else
 					{
-						this._Driver_ID = default(string);
+						this._Cake_Type_Code = default(string);
 					}
-					this.SendPropertyChanged("LoginSystem");
+					this.SendPropertyChanged("Cake_Type");
 				}
 			}
 		}
@@ -2082,519 +2376,40 @@ namespace Shop_data
 			}
 		}
 		
-		private void attach_Carts(Cart entity)
+		private void attach_COMMENTs(COMMENT entity)
 		{
 			this.SendPropertyChanging();
-			entity.Driver = this;
+			entity.Cake = this;
 		}
 		
-		private void detach_Carts(Cart entity)
+		private void detach_COMMENTs(COMMENT entity)
 		{
 			this.SendPropertyChanging();
-			entity.Driver = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LoginSystem")]
-	public partial class LoginSystem : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _ID;
-		
-		private string _Pass;
-		
-		private System.Nullable<int> _ID_Rule;
-		
-		private EntityRef<Chef> _Chef;
-		
-		private EntityRef<Customer> _Customer;
-		
-		private EntityRef<Driver> _Driver;
-		
-		private EntityRef<Manager> _Manager;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(string value);
-    partial void OnIDChanged();
-    partial void OnPassChanging(string value);
-    partial void OnPassChanged();
-    partial void OnID_RuleChanging(System.Nullable<int> value);
-    partial void OnID_RuleChanged();
-    #endregion
-		
-		public LoginSystem()
-		{
-			this._Chef = default(EntityRef<Chef>);
-			this._Customer = default(EntityRef<Customer>);
-			this._Driver = default(EntityRef<Driver>);
-			this._Manager = default(EntityRef<Manager>);
-			OnCreated();
+			entity.Cake = null;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pass", DbType="VarChar(32)")]
-		public string Pass
-		{
-			get
-			{
-				return this._Pass;
-			}
-			set
-			{
-				if ((this._Pass != value))
-				{
-					this.OnPassChanging(value);
-					this.SendPropertyChanging();
-					this._Pass = value;
-					this.SendPropertyChanged("Pass");
-					this.OnPassChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Rule", DbType="Int")]
-		public System.Nullable<int> ID_Rule
-		{
-			get
-			{
-				return this._ID_Rule;
-			}
-			set
-			{
-				if ((this._ID_Rule != value))
-				{
-					this.OnID_RuleChanging(value);
-					this.SendPropertyChanging();
-					this._ID_Rule = value;
-					this.SendPropertyChanged("ID_Rule");
-					this.OnID_RuleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Chef", Storage="_Chef", ThisKey="ID", OtherKey="Chef_ID", IsUnique=true, IsForeignKey=false)]
-		public Chef Chef
-		{
-			get
-			{
-				return this._Chef.Entity;
-			}
-			set
-			{
-				Chef previousValue = this._Chef.Entity;
-				if (((previousValue != value) 
-							|| (this._Chef.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Chef.Entity = null;
-						previousValue.LoginSystem = null;
-					}
-					this._Chef.Entity = value;
-					if ((value != null))
-					{
-						value.LoginSystem = this;
-					}
-					this.SendPropertyChanged("Chef");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Customer", Storage="_Customer", ThisKey="ID", OtherKey="Customer_ID", IsUnique=true, IsForeignKey=false)]
-		public Customer Customer
-		{
-			get
-			{
-				return this._Customer.Entity;
-			}
-			set
-			{
-				Customer previousValue = this._Customer.Entity;
-				if (((previousValue != value) 
-							|| (this._Customer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Customer.Entity = null;
-						previousValue.LoginSystem = null;
-					}
-					this._Customer.Entity = value;
-					if ((value != null))
-					{
-						value.LoginSystem = this;
-					}
-					this.SendPropertyChanged("Customer");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Driver", Storage="_Driver", ThisKey="ID", OtherKey="Driver_ID", IsUnique=true, IsForeignKey=false)]
-		public Driver Driver
-		{
-			get
-			{
-				return this._Driver.Entity;
-			}
-			set
-			{
-				Driver previousValue = this._Driver.Entity;
-				if (((previousValue != value) 
-							|| (this._Driver.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Driver.Entity = null;
-						previousValue.LoginSystem = null;
-					}
-					this._Driver.Entity = value;
-					if ((value != null))
-					{
-						value.LoginSystem = this;
-					}
-					this.SendPropertyChanged("Driver");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Manager", Storage="_Manager", ThisKey="ID", OtherKey="Manager_ID", IsUnique=true, IsForeignKey=false)]
-		public Manager Manager
-		{
-			get
-			{
-				return this._Manager.Entity;
-			}
-			set
-			{
-				Manager previousValue = this._Manager.Entity;
-				if (((previousValue != value) 
-							|| (this._Manager.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Manager.Entity = null;
-						previousValue.LoginSystem = null;
-					}
-					this._Manager.Entity = value;
-					if ((value != null))
-					{
-						value.LoginSystem = this;
-					}
-					this.SendPropertyChanged("Manager");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Manager")]
-	public partial class Manager : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Manager_ID;
-		
-		private string _Manager_Name;
-		
-		private string _Manager_Phone;
-		
-		private EntityRef<LoginSystem> _LoginSystem;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnManager_IDChanging(string value);
-    partial void OnManager_IDChanged();
-    partial void OnManager_NameChanging(string value);
-    partial void OnManager_NameChanged();
-    partial void OnManager_PhoneChanging(string value);
-    partial void OnManager_PhoneChanged();
-    #endregion
-		
-		public Manager()
-		{
-			this._LoginSystem = default(EntityRef<LoginSystem>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Manager_ID
-		{
-			get
-			{
-				return this._Manager_ID;
-			}
-			set
-			{
-				if ((this._Manager_ID != value))
-				{
-					if (this._LoginSystem.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnManager_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Manager_ID = value;
-					this.SendPropertyChanged("Manager_ID");
-					this.OnManager_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_Name", DbType="NVarChar(30)")]
-		public string Manager_Name
-		{
-			get
-			{
-				return this._Manager_Name;
-			}
-			set
-			{
-				if ((this._Manager_Name != value))
-				{
-					this.OnManager_NameChanging(value);
-					this.SendPropertyChanging();
-					this._Manager_Name = value;
-					this.SendPropertyChanged("Manager_Name");
-					this.OnManager_NameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Manager_Phone", DbType="Char(12)")]
-		public string Manager_Phone
-		{
-			get
-			{
-				return this._Manager_Phone;
-			}
-			set
-			{
-				if ((this._Manager_Phone != value))
-				{
-					this.OnManager_PhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Manager_Phone = value;
-					this.SendPropertyChanged("Manager_Phone");
-					this.OnManager_PhoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LoginSystem_Manager", Storage="_LoginSystem", ThisKey="Manager_ID", OtherKey="ID", IsForeignKey=true)]
-		public LoginSystem LoginSystem
-		{
-			get
-			{
-				return this._LoginSystem.Entity;
-			}
-			set
-			{
-				LoginSystem previousValue = this._LoginSystem.Entity;
-				if (((previousValue != value) 
-							|| (this._LoginSystem.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._LoginSystem.Entity = null;
-						previousValue.Manager = null;
-					}
-					this._LoginSystem.Entity = value;
-					if ((value != null))
-					{
-						value.Manager = this;
-						this._Manager_ID = value.ID;
-					}
-					else
-					{
-						this._Manager_ID = default(string);
-					}
-					this.SendPropertyChanged("LoginSystem");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payment_Methods")]
-	public partial class Payment_Method : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Payment_Method_Code;
-		
-		private string _Payment_Method_Descripsion;
-		
-		private EntitySet<Customer_Payment_Method> _Customer_Payment_Methods;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPayment_Method_CodeChanging(string value);
-    partial void OnPayment_Method_CodeChanged();
-    partial void OnPayment_Method_DescripsionChanging(string value);
-    partial void OnPayment_Method_DescripsionChanged();
-    #endregion
-		
-		public Payment_Method()
-		{
-			this._Customer_Payment_Methods = new EntitySet<Customer_Payment_Method>(new Action<Customer_Payment_Method>(this.attach_Customer_Payment_Methods), new Action<Customer_Payment_Method>(this.detach_Customer_Payment_Methods));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Method_Code", DbType="Char(2) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Payment_Method_Code
-		{
-			get
-			{
-				return this._Payment_Method_Code;
-			}
-			set
-			{
-				if ((this._Payment_Method_Code != value))
-				{
-					this.OnPayment_Method_CodeChanging(value);
-					this.SendPropertyChanging();
-					this._Payment_Method_Code = value;
-					this.SendPropertyChanged("Payment_Method_Code");
-					this.OnPayment_Method_CodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Payment_Method_Descripsion", DbType="NVarChar(30)")]
-		public string Payment_Method_Descripsion
-		{
-			get
-			{
-				return this._Payment_Method_Descripsion;
-			}
-			set
-			{
-				if ((this._Payment_Method_Descripsion != value))
-				{
-					this.OnPayment_Method_DescripsionChanging(value);
-					this.SendPropertyChanging();
-					this._Payment_Method_Descripsion = value;
-					this.SendPropertyChanged("Payment_Method_Descripsion");
-					this.OnPayment_Method_DescripsionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Payment_Method_Customer_Payment_Method", Storage="_Customer_Payment_Methods", ThisKey="Payment_Method_Code", OtherKey="Payment_Menthod_Code")]
-		public EntitySet<Customer_Payment_Method> Customer_Payment_Methods
-		{
-			get
-			{
-				return this._Customer_Payment_Methods;
-			}
-			set
-			{
-				this._Customer_Payment_Methods.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		private void attach_Cart_Items(Cart_Item entity)
 		{
 			this.SendPropertyChanging();
-			entity.Payment_Method = this;
+			entity.Cake = this;
 		}
 		
-		private void detach_Customer_Payment_Methods(Customer_Payment_Method entity)
+		private void detach_Cart_Items(Cart_Item entity)
 		{
 			this.SendPropertyChanging();
-			entity.Payment_Method = null;
+			entity.Cake = null;
+		}
+		
+		private void attach_Cake_Images(Cake_Image entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cake = this;
+		}
+		
+		private void detach_Cake_Images(Cake_Image entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cake = null;
 		}
 	}
 	
@@ -2784,72 +2599,59 @@ namespace Shop_data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cakes")]
-	public partial class Cake : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cake_Image")]
+	public partial class Cake_Image : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private int _Imange_ID;
+		
 		private string _Cake_ID;
 		
-		private string _Cake_Name;
+		private string _Cake_Image1;
 		
-		private string _Cake_Type_Code;
-		
-		private System.Nullable<double> _Cake_Price;
-		
-		private System.Nullable<double> _Discount;
-		
-		private string _Cake_decripsion;
-		
-		private System.Nullable<int> _Amount;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Sold;
-		
-		private EntitySet<Cake_Image> _Cake_Images;
-		
-		private EntitySet<Cart_Item> _Cart_Items;
-		
-		private EntitySet<COMMENT> _COMMENTs;
-		
-		private EntityRef<Cake_Type> _Cake_Type;
+		private EntityRef<Cake> _Cake;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnImange_IDChanging(int value);
+    partial void OnImange_IDChanged();
     partial void OnCake_IDChanging(string value);
     partial void OnCake_IDChanged();
-    partial void OnCake_NameChanging(string value);
-    partial void OnCake_NameChanged();
-    partial void OnCake_Type_CodeChanging(string value);
-    partial void OnCake_Type_CodeChanged();
-    partial void OnCake_PriceChanging(System.Nullable<double> value);
-    partial void OnCake_PriceChanged();
-    partial void OnDiscountChanging(System.Nullable<double> value);
-    partial void OnDiscountChanged();
-    partial void OnCake_decripsionChanging(string value);
-    partial void OnCake_decripsionChanged();
-    partial void OnAmountChanging(System.Nullable<int> value);
-    partial void OnAmountChanged();
-    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreateDateChanged();
-    partial void OnSoldChanging(System.Nullable<int> value);
-    partial void OnSoldChanged();
+    partial void OnCake_Image1Changing(string value);
+    partial void OnCake_Image1Changed();
     #endregion
 		
-		public Cake()
+		public Cake_Image()
 		{
-			this._Cake_Images = new EntitySet<Cake_Image>(new Action<Cake_Image>(this.attach_Cake_Images), new Action<Cake_Image>(this.detach_Cake_Images));
-			this._Cart_Items = new EntitySet<Cart_Item>(new Action<Cart_Item>(this.attach_Cart_Items), new Action<Cart_Item>(this.detach_Cart_Items));
-			this._COMMENTs = new EntitySet<COMMENT>(new Action<COMMENT>(this.attach_COMMENTs), new Action<COMMENT>(this.detach_COMMENTs));
-			this._Cake_Type = default(EntityRef<Cake_Type>);
+			this._Cake = default(EntityRef<Cake>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imange_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Imange_ID
+		{
+			get
+			{
+				return this._Imange_ID;
+			}
+			set
+			{
+				if ((this._Imange_ID != value))
+				{
+					this.OnImange_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Imange_ID = value;
+					this.SendPropertyChanged("Imange_ID");
+					this.OnImange_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_ID", DbType="Char(5)")]
 		public string Cake_ID
 		{
 			get
@@ -2860,6 +2662,10 @@ namespace Shop_data
 			{
 				if ((this._Cake_ID != value))
 				{
+					if (this._Cake.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnCake_IDChanging(value);
 					this.SendPropertyChanging();
 					this._Cake_ID = value;
@@ -2869,239 +2675,56 @@ namespace Shop_data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Name", DbType="NVarChar(50)")]
-		public string Cake_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Cake_Image", Storage="_Cake_Image1", DbType="NVarChar(MAX)")]
+		public string Cake_Image1
 		{
 			get
 			{
-				return this._Cake_Name;
+				return this._Cake_Image1;
 			}
 			set
 			{
-				if ((this._Cake_Name != value))
+				if ((this._Cake_Image1 != value))
 				{
-					this.OnCake_NameChanging(value);
+					this.OnCake_Image1Changing(value);
 					this.SendPropertyChanging();
-					this._Cake_Name = value;
-					this.SendPropertyChanged("Cake_Name");
-					this.OnCake_NameChanged();
+					this._Cake_Image1 = value;
+					this.SendPropertyChanged("Cake_Image1");
+					this.OnCake_Image1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Type_Code", DbType="Char(7)")]
-		public string Cake_Type_Code
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cake_Image", Storage="_Cake", ThisKey="Cake_ID", OtherKey="Cake_ID", IsForeignKey=true)]
+		public Cake Cake
 		{
 			get
 			{
-				return this._Cake_Type_Code;
+				return this._Cake.Entity;
 			}
 			set
 			{
-				if ((this._Cake_Type_Code != value))
-				{
-					if (this._Cake_Type.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnCake_Type_CodeChanging(value);
-					this.SendPropertyChanging();
-					this._Cake_Type_Code = value;
-					this.SendPropertyChanged("Cake_Type_Code");
-					this.OnCake_Type_CodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_Price", DbType="Float")]
-		public System.Nullable<double> Cake_Price
-		{
-			get
-			{
-				return this._Cake_Price;
-			}
-			set
-			{
-				if ((this._Cake_Price != value))
-				{
-					this.OnCake_PriceChanging(value);
-					this.SendPropertyChanging();
-					this._Cake_Price = value;
-					this.SendPropertyChanged("Cake_Price");
-					this.OnCake_PriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float")]
-		public System.Nullable<double> Discount
-		{
-			get
-			{
-				return this._Discount;
-			}
-			set
-			{
-				if ((this._Discount != value))
-				{
-					this.OnDiscountChanging(value);
-					this.SendPropertyChanging();
-					this._Discount = value;
-					this.SendPropertyChanged("Discount");
-					this.OnDiscountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cake_decripsion", DbType="NVarChar(50)")]
-		public string Cake_decripsion
-		{
-			get
-			{
-				return this._Cake_decripsion;
-			}
-			set
-			{
-				if ((this._Cake_decripsion != value))
-				{
-					this.OnCake_decripsionChanging(value);
-					this.SendPropertyChanging();
-					this._Cake_decripsion = value;
-					this.SendPropertyChanged("Cake_decripsion");
-					this.OnCake_decripsionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Int")]
-		public System.Nullable<int> Amount
-		{
-			get
-			{
-				return this._Amount;
-			}
-			set
-			{
-				if ((this._Amount != value))
-				{
-					this.OnAmountChanging(value);
-					this.SendPropertyChanging();
-					this._Amount = value;
-					this.SendPropertyChanged("Amount");
-					this.OnAmountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreateDate", DbType="Date")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sold", DbType="Int")]
-		public System.Nullable<int> Sold
-		{
-			get
-			{
-				return this._Sold;
-			}
-			set
-			{
-				if ((this._Sold != value))
-				{
-					this.OnSoldChanging(value);
-					this.SendPropertyChanging();
-					this._Sold = value;
-					this.SendPropertyChanged("Sold");
-					this.OnSoldChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cake_Image", Storage="_Cake_Images", ThisKey="Cake_ID", OtherKey="Cake_ID")]
-		public EntitySet<Cake_Image> Cake_Images
-		{
-			get
-			{
-				return this._Cake_Images;
-			}
-			set
-			{
-				this._Cake_Images.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Cart_Item", Storage="_Cart_Items", ThisKey="Cake_ID", OtherKey="Cake_ID")]
-		public EntitySet<Cart_Item> Cart_Items
-		{
-			get
-			{
-				return this._Cart_Items;
-			}
-			set
-			{
-				this._Cart_Items.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_COMMENT", Storage="_COMMENTs", ThisKey="Cake_ID", OtherKey="Cake_ID")]
-		public EntitySet<COMMENT> COMMENTs
-		{
-			get
-			{
-				return this._COMMENTs;
-			}
-			set
-			{
-				this._COMMENTs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cake_Type_Cake", Storage="_Cake_Type", ThisKey="Cake_Type_Code", OtherKey="Cake_Type_Code", IsForeignKey=true)]
-		public Cake_Type Cake_Type
-		{
-			get
-			{
-				return this._Cake_Type.Entity;
-			}
-			set
-			{
-				Cake_Type previousValue = this._Cake_Type.Entity;
+				Cake previousValue = this._Cake.Entity;
 				if (((previousValue != value) 
-							|| (this._Cake_Type.HasLoadedOrAssignedValue == false)))
+							|| (this._Cake.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Cake_Type.Entity = null;
-						previousValue.Cakes.Remove(this);
+						this._Cake.Entity = null;
+						previousValue.Cake_Images.Remove(this);
 					}
-					this._Cake_Type.Entity = value;
+					this._Cake.Entity = value;
 					if ((value != null))
 					{
-						value.Cakes.Add(this);
-						this._Cake_Type_Code = value.Cake_Type_Code;
+						value.Cake_Images.Add(this);
+						this._Cake_ID = value.Cake_ID;
 					}
 					else
 					{
-						this._Cake_Type_Code = default(string);
+						this._Cake_ID = default(string);
 					}
-					this.SendPropertyChanged("Cake_Type");
+					this.SendPropertyChanged("Cake");
 				}
 			}
 		}
@@ -3124,42 +2747,6 @@ namespace Shop_data
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Cake_Images(Cake_Image entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = this;
-		}
-		
-		private void detach_Cake_Images(Cake_Image entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = null;
-		}
-		
-		private void attach_Cart_Items(Cart_Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = this;
-		}
-		
-		private void detach_Cart_Items(Cart_Item entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = null;
-		}
-		
-		private void attach_COMMENTs(COMMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = this;
-		}
-		
-		private void detach_COMMENTs(COMMENT entity)
-		{
-			this.SendPropertyChanging();
-			entity.Cake = null;
 		}
 	}
 	
@@ -3184,6 +2771,32 @@ namespace Shop_data
 				if ((this._ID != value))
 				{
 					this._ID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class check_cardResult
+	{
+		
+		private string _Customer_ID;
+		
+		public check_cardResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Customer_ID", DbType="VarChar(50)")]
+		public string Customer_ID
+		{
+			get
+			{
+				return this._Customer_ID;
+			}
+			set
+			{
+				if ((this._Customer_ID != value))
+				{
+					this._Customer_ID = value;
 				}
 			}
 		}

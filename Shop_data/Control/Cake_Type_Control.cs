@@ -17,9 +17,11 @@ namespace Shop_data.Control
         {
             return db.Cake_Types.Where(x => x.Status == true).OrderBy(x => x.The_Order).ToList();
         }
-        public List<string> ListCakes(string code)
+        public List<string> ListCakes(string code, ref int totalRecord, int pageIndex =1, int pageSize = 9)
         {
-            return db.Cakes.Where(x => x.Cake_Type_Code == code).OrderByDescending(x=>x.CreateDate).Select(x=>x.Cake_ID).ToList();
+            totalRecord = db.Cakes.Where(x => x.Cake_Type_Code == code).Count();
+            var model =  db.Cakes.Where(x => x.Cake_Type_Code == code).OrderBy(x=>x.CreateDate).Select(x=>x.Cake_ID).Skip((pageIndex-1)*pageSize).Take(pageSize).ToList();
+            return model;
         }
         public string ListFirst()
         {

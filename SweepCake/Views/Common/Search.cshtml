@@ -1,0 +1,227 @@
+﻿@model List<SweepCake.Models.Cake_Dentals>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<head>
+    <link href="~/Content/style2.css" rel="stylesheet" />
+</head>
+<script>
+    jQuery(document).ready(function ($) {
+
+        $('#etalage').etalage({
+            thumb_image_width: 238.5,
+            thumb_image_height: 238.5,
+
+            show_hint: true,
+            click_callback: function (image_anchor, instance_id) {
+                alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+            }
+        });
+
+    });
+</script>
+<div class="clearfix"><br></div>
+<div class="container">
+    <div class="content row">
+        <div class="col-md-9 col-md-push-3 center-site">
+
+            <div class="center">
+                @*<div class="toolbar">
+                        <div class="soft">
+                            <br />
+                            <label class="">Sắp xếp theo</label>
+                            <select class="sort-by">
+                                <option value="default">Mặc định</option>
+                                <option value="price-asc">Giá tăng dần</option>
+                                <option value="price-desc">Giá giảm dần</option>
+                                <option value="alpha-asc">Từ A-Z</option>
+                                <option value="alpha-desc">Từ Z-A</option>
+                                <option value="created-desc">Mới đến cũ</option>
+                                <option value="created-asc">Cũ đến mới</option>
+                            </select>
+                        </div>
+                        <div class="soft">
+                            <br />
+                            <label>Hiển thị</label>
+                            <select onchange="location = this.options[this.selectedIndex].value;" class="sort">
+                                <option value="default">15</option>
+                                <option value="/collections/cake-banh-kem-sinh-nhat?view=18">18</option>
+                                <option value="/collections/cake-banh-kem-sinh-nhat?view=21">21</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group view display" data-toggle="buttons-radio"><a class="active" id="grid" hrel="tooltip" title="Dạng Lưới" onclick="display('grid');loadisotope();"><i class="fa fa-th-large"></i></a> <a id="list" hrel="tooltip" title="Dạng Danh sách" onclick="display('list');"><i class="fa fa-th-list"></i></a></div>
+                        <script>
+                            $(document).ready(function () {
+                                Bizweb.queryParams = {};
+                                if (location.search.length) {
+                                    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                                        aKeyValue = aCouples[i].split('=');
+                                        if (aKeyValue.length > 1) {
+                                            Bizweb.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                                        }
+                                    }
+                                }
+                                $('.sort-by')
+                                    .val('default')
+                                    .bind('change', function () {
+                                        Bizweb.queryParams.sortby = jQuery(this).val();
+                                        location.search = jQuery.param(Bizweb.queryParams).replace(/\+/g, '%20');
+                                    });
+                            });
+                        </script>
+                    </div>*@
+                <div class="collect-grid">
+                    <div class="row">
+                        <div class="clearfix"></div>
+
+                        @foreach (var item in Model)
+                        {
+                            var link = "/detail/" + item.ID;
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="@link">
+                                            <img src="@item.Image1" alt="@item.Name" class="img-responsive" style="height: 238.5px">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span> @item.Price$</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="@link">
+                                            <h3>@item.Name</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a class="list-btn-add" data-id="@item.ID" data-pri="@item.Price"><span>Buy</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+                <!--Phan trang-->
+                @if (ViewBag.totalPage > 1)
+                {
+                    var pageDisplay = (int)ViewBag.MaxPage;
+                    int totalPage = (int)ViewBag.TotalPage;
+                    int currentPage = ((int)ViewBag.Page);
+
+                    // Create numeric links
+                    var startPageIndex = Math.Max(1, currentPage - pageDisplay / 2);
+                    var endPageIndex = Math.Min(totalPage, currentPage + pageDisplay / 2);
+
+                    var link = "/Common/Search/" ;
+                    <nav>
+                        <ul class="pagination">
+                            @if (currentPage > ViewBag.First)
+                            {
+                                <li><a href="@link?key=@ViewBag.key&page=@ViewBag.First" title="Trang đầu" class="first"><<</a></li>
+                                <li>
+                                    <a href="@link?key=@ViewBag.key&page=@ViewBag.Prev" title="Trang trước" class="prev"><</a>
+                                </li>
+
+                            }
+                            @for (int i = startPageIndex; i <= endPageIndex; i++)
+                            {
+                                if (currentPage == i)
+                                {
+
+                                    <li> <a href="@link?key=@ViewBag.key&page=@i" class="current" title="Trang @i">@i</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="@link?key=@ViewBag.key&page=@i" title="Trang @i" class="current">@i</a></li>
+                                }
+                            }
+                            @if (currentPage < totalPage)
+                            {
+                                <li><a href="@link?key=@ViewBag.key&page=@ViewBag.Next" class="next" title="Trang sau">></a></li>
+                                <li> <a href="@link?key=@ViewBag.key&page=@ViewBag.Last" class="last" title="Trang cuối">>></a></li>
+                            }
+
+                        </ul>
+                    </nav>
+
+
+                }
+                else
+                {
+                    <span>No products to display</span>
+                }
+
+
+            </div>
+
+        </div>
+        <div class="col-md-3 col-md-pull-9 left-sidebar">
+            @*@{ Html.RenderAction("Cake_type", "Common");}*@
+            @*<div class="category">
+                    <br />
+                    <div class="module-title">
+                        <h2 id="product">Danh mục bánh</h2>
+                    </div>
+                    <ul class="list-unstyled">
+
+
+                        <li><a class="link_active" href="/cake-banh-kem-sinh-nhat"><span>Cake - Bánh kem sinh nhật</span></a></li>
+
+
+
+                        <li><a class="" href="/bread-pastry-banh-mi-banh-ngot"><span>Tea break - Bánh ngọt</span></a></li>
+
+
+
+                        <li><a class="" href="/wedding-gift-cuoi-qua-tang"><span>Wedding &amp; Gift - Cưới &amp; Quà tặng</span></a></li>
+
+
+
+                        <li><a class="" href="/giang-sinh-nam-moi"><span>Xmas &amp; New year - Giáng sinh &amp; Năm mới</span></a></li>
+
+
+                    </ul>
+                </div>*@
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.grid-action-box a').click(function () {
+        buycake(this);
+    });
+    function buycake(buyButton) {
+        var cake_id = $(buyButton).data('id');
+        var cake_pri = parseFloat($(buyButton).data('pri'));
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            }
+        };
+        do {
+            var num = parseInt(prompt("Please enter the amount you need to buy :", "1"), 10);
+        } while ( num > 100 || num < 1);
+        xhttp.open("POST", "/AddCake?productId=" + cake_id + "&quantity=" + num, true);
+
+        //alert("Added Cart");
+        xhttp.send();
+
+        var total = parseFloat($('#cart-info').text());
+        total += (num * cake_pri);
+        $(document).ready(function () {
+            $('#cart-info').text(total);
+        });
+    }
+</script>

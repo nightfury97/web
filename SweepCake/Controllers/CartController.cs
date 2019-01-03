@@ -1,4 +1,5 @@
-﻿using Shop_data.Control;
+﻿using Shop_data;
+using Shop_data.Control;
 using SweepCake.Models;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,16 @@ namespace SweepCake.Controllers
             string a = new DentalProduct().Image1(ID);
             return a;
         }
+        //public string Image1(string ID)
+        //{
+        //    var aa = data.Cake_Images.Where(x => x.Cake_ID == ID).FirstOrDefault();
+        //    if (aa != null)
+        //    {
+        //        string a = aa.Cake_Image1.ToString();
+        //        return a;
+        //    }
+        //    return "/Images/logo.png";
+        //}
         public void AddItem(string productId, int quantity)
         {
             var product = new DentalProduct().GetByID(productId);
@@ -45,6 +56,7 @@ namespace SweepCake.Controllers
                         if (item.Cake.Cake_ID == productId)
                         {
                             item.Quantity += quantity;
+                            item.price = (float)(product.Cake_Price * (1 - product.Discount));
                         }
                     }
                 }
@@ -66,6 +78,7 @@ namespace SweepCake.Controllers
                 var item = new CartItem();
                 item.Cake = product;
                 item.Quantity = quantity;
+                item.price=(float)(product.Cake_Price * (1 - product.Discount));
                 var list = new List<CartItem>();
                 list.Add(item);
                 //Gán vào session
@@ -166,6 +179,64 @@ namespace SweepCake.Controllers
         public ActionResult Checkout()
         {
             return View();
+        }
+        [HttpPost]
+        public ActionResult ShippingInfo(string firstname,string email,string address, string phone,string cardname,string cardnumber,string expmonth,string expyear,string cvv,bool payment = false)
+        {
+            var dao = new CartControl();
+            var listCart = (List<SweepCake.Models.CartItem>)Session[SweepCake.Common.CommonConstant.CartSession];
+            var userlogin = (UserLogin)Session[SweepCake.Common.CommonConstant.USER_SESSION];
+            // add phuong thuc thanh toan
+
+            if (payment == true)
+            {
+                if (dao.checkPayment(userlogin.UserID, cardnumber) == false)
+                {
+                    Customer_Payment_Method CPM = new Customer_Payment_Method();
+                    CPM.Customer_ID = userlogin.UserID;
+                    CPM.Payment_Menthod_Code = "CS";
+                }
+            }
+            else
+            {
+                if(dao.checkPayment(userlogin.UserID,cardnumber)==false)
+                {
+                    Customer_Payment_Method CPM = new Customer_Payment_Method();
+                    CPM.Customer_ID = userlogin.UserID;
+                    CPM.Card_Number = cardnumber;
+                    CPM.Expmonth = expmonth;
+                    CPM.Expyear = CPM.Expyear;
+                    CPM.Payment_Menthod_Code = "VS";
+                    CPM.CVV = cvv;
+                    dao.insert(CPM);
+                }
+            }
+            dao.paymentID(userlogin.UserID, cardnumber);
+            //add don hang
+            DateTime a = DateTime.Now;
+            if (payment == true)
+            {
+                dao.insertorder(userlogin.UserID, dao.paymentID(userlogin.UserID, cardnumber),a, firstname, address, phone, email, 1);
+            }
+            else
+            {
+                dao.insertorder(userlogin.UserID, dao.paymentID(userlogin.UserID, cardnumber), a,firstname, address, phone, email, 2);
+            }
+            //add gio hang
+            int IDorder = Convert.ToInt32(dao.CartID(userlogin.UserID, a));
+            
+            foreach(var item in listCart)
+            {
+                var itemcart = new Cart_Item();
+                itemcart.Cart_ID = IDorder;
+                itemcart.Cake_ID = item.Cake.Cake_ID;
+                itemcart.Price = item.price;
+                itemcart.Quantity = item.Quantity;
+                dao.insertcakes(itemcart);
+            }
+            Session[SweepCake.Common.CommonConstant.CartSession] = null;
+           
+            return Redirect("/HomePage/Index");
         }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="AccountModel.cs" />
     <Compile Include="Control\CakeControl.cs" />
     <Compile Include="Control\Cake_Type_Control.cs" />
+    <Compile Include="Control\CartControl.cs" />
     <Compile Include="Control\DentalProduct.cs" />
     <Compile Include="Control\LoginControl.cs" />
     <Compile Include="Data.designer.cs">

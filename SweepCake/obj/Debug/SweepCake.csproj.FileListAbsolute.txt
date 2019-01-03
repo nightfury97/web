@@ -198,3 +198,7 @@ F:\GitHub\SweepCake\web\SweepCake\obj\Debug\SweepCake.csproj.CoreCompileInputs.c
 F:\GitHub\SweepCake\web\SweepCake\obj\Debug\SweepCake.csproj.CopyComplete
 F:\GitHub\SweepCake\web\SweepCake\obj\Debug\SweepCake.dll
 F:\GitHub\SweepCake\web\SweepCake\obj\Debug\SweepCake.pdb
+F:\GitHub\SweepCake\web\SweepCake\bin\PagedList.dll
+F:\GitHub\SweepCake\web\SweepCake\bin\PagedList.Mvc.dll
+F:\GitHub\SweepCake\web\SweepCake\bin\PagedList.xml
+F:\GitHub\SweepCake\web\SweepCake\bin\PagedList.Mvc.xml

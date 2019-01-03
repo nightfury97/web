@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using Shop_data;
 using Shop_data.Control;
 using SweepCake.Models;
@@ -12,11 +13,16 @@ namespace SweepCake.Controllers
     public class productController : Controller
     {
         // GET: product
-        public ActionResult products(string type )
+
+            public ActionResult products(string type, int page = 1, int pageSize =9 )
         {
             if (type == "products") type = new Cake_Type_Control().ListFirst();
-            List<string> ids = new Cake_Type_Control().ListCakes(type);
-
+            type=type.Trim();
+            int totalRecord = 0;
+            List<string> ids = new Cake_Type_Control().ListCakes(type,ref totalRecord,page,pageSize);
+            ViewBag.Type = type;
+            ViewBag.Total = totalRecord;
+            ViewBag.page = page;
             List<Cake_Dentals> cakes = new List<Cake_Dentals>();
 
             foreach (string ID in ids)
@@ -34,6 +40,18 @@ namespace SweepCake.Controllers
                 cakes.Add(cake);
 
             }
+
+            ViewBag.Total = totalRecord;
+            ViewBag.page = page;
+            int maxPage = 3;
+            int totalPage = 0;
+            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+            ViewBag.totalPage = totalPage;
+            ViewBag.MaxPage = maxPage;
+            ViewBag.First = 1;
+            ViewBag.Last = totalPage;
+            ViewBag.Next = page +1;
+            ViewBag.Prev = page - 1;
             return View(cakes);
             
         }
@@ -148,6 +166,40 @@ namespace SweepCake.Controllers
 
             ViewBag.RelCake = cake_l;
         }
-
+        
+        //public ActionResult SearchResult(List<Cake_Dentals> cakes)
+        //{
+        //    return View(cakes);
+        //}
     }
+    
+    //public PartialViewResult GetPage(int? page,string type)
+    //{
+    //    if (type == "products") type = new Cake_Type_Control().ListFirst();
+    //    List<string> ids = new Cake_Type_Control().ListCakes(type);
+
+    //    List<Cake_Dentals> cakes = new List<Cake_Dentals>();
+
+    //    foreach (string ID in ids)
+    //    {
+    //        Cake_Dentals cake = new Cake_Dentals();
+    //        var product = new DentalProduct().GetByID(ID);
+    //        cake.ID = product.Cake_ID;
+    //        cake.Name = product.Cake_Name;
+    //        cake.Price = (float)product.Cake_Price;
+    //        cake.Type = new DentalProduct().GetTypeName(product.Cake_Type_Code);
+    //        cake.TypeCode = product.Cake_Type_Code;
+    //        cake.Discount = (float)product.Discount;
+    //        cake.Decripsion = product.Cake_decripsion;
+    //        cake.Image1 = new DentalProduct().Image1(product.Cake_ID);
+    //        cakes.Add(cake);
+
+    //    }
+    //    int pageSize = 3;
+    //    int pageNumber = (page ?? 1);
+    //    return PartialView("showProduct", cakes.ToPagedList(pageNumber, pageSize));
+    //}
+
+
 }
+

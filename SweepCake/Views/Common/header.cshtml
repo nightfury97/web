@@ -5,22 +5,25 @@
         <div class="top-header-left">
             <ul>
 
-                <li><a href="">Checkout</a></li>
+                <li><a href="/Cart/Checkout">Checkout</a></li>
             </ul>
             <div class="clearfix"> </div>
         </div>
         @{ Html.RenderAction("Cart", "Common");}
+
         <div class="top-header-right">
             <ul>
-                @*<li>
-            <form>
-                <input type="text">
-                <input type="submit" value="" />
-            </form>
-
-        </li>*@
+                <li>
+                    @using (Html.BeginForm( "Search", "Common",FormMethod.Post))
+                    {
+                    <form>
+                        <input type="text" name="key">
+                        <input type="submit" value="" />
+                    </form>
+                    }
+                </li>
                 @{
-                    var session = (UserLogin)Session[SweepCake.Common.CommonConstant.USER_SESSION];
+                        var session = (UserLogin)Session[SweepCake.Common.CommonConstant.USER_SESSION];
                 }
                 @if (session == null)
                 {
@@ -29,7 +32,7 @@
                 }
                 else
                 {
-                    <li><a href=""><label>Hello @session.Name</label></a></li>
+                    <li><a href="/Login/Customer"><label>Hello @session.Name</label></a></li>
                 }
             </ul>
         </div>

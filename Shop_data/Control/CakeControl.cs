@@ -32,36 +32,37 @@ namespace Shop_data.Control
         {
             return data.Cakes.OrderByDescending(x => x.Sold).Take(top).ToList();
         }
-        //public List<ViewCake> Search(string keyword, ref int totalRecord/*, int pageIndex = 1, int pageSize = 2*/)
-        //{
-        //    totalRecord = data.Cakes.Where(x => x.Cake_Name == keyword).Count();
-        //    var model = (from a in data.Cakes
-        //                 join b in data.Cake_Types
-        //                 on a.Cake_Type_Code equals b.Cake_Type_Code
-        //                 where a.Cake_Name.Contains(keyword)
-        //                 select new
-        //                 {
-        //                     CateMetaTitle = b.Meta_Title,
-        //                     CateName = b.Cake_Type_Name,
-        //                     CreatedDate = a.CreateDate,
-        //                     ID = a.Cake_ID,
-        //                     Images = newDentalProduct,
-        //                     Name = a.Name,
-        //                     MetaTitle = a.MetaTitle,
-        //                     Price = a.Price
-        //                 }).AsEnumerable().Select(x => new ProductViewModel()
-        //                 {
-        //                     CateMetaTitle = x.MetaTitle,
-        //                     CateName = x.Name,
-        //                     CreatedDate = x.CreatedDate,
-        //                     ID = x.ID,
-        //                     Images = x.Images,
-        //                     Name = x.Name,
-        //                     MetaTitle = x.MetaTitle,
-        //                     Price = x.Price
-        //                 });
-        //    model.OrderByDescending(x => x.CreatedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize);
-        //    return model.ToList();
-        //}
+        public List<string> Search(string keyword, ref int totalRecord, int pageIndex = 1, int pageSize = 9)
+        {
+            totalRecord = data.Cakes.Where(x => x.Cake_Name.Contains(keyword)).Count();
+            var a = data.Cakes.Where(x => x.Cake_Name.Contains(keyword)).Select(x=>x.Cake_ID).ToList();
+            //var model = (from a in data.Cakes
+            //             join b in data.Cake_Types
+            //             on a.Cake_Type_Code equals b.Cake_Type_Code
+            //             where a.Cake_Name.Contains(keyword)
+            //             select new
+            //             {
+            //                 CateMetaTitle = b.Meta_Title,
+            //                 CateName = b.Cake_Type_Name,
+            //                 CreatedDate = a.CreateDate,
+            //                 ID = a.Cake_ID,
+            //                 Images = newDentalProduct,
+            //                 Name = a.Name,
+            //                 MetaTitle = a.MetaTitle,
+            //                 Price = a.Price
+            //             }).AsEnumerable().Select(x => new ProductViewModel()
+            //             {
+            //                 CateMetaTitle = x.MetaTitle,
+            //                 CateName = x.Name,
+            //                 CreatedDate = x.CreatedDate,
+            //                 ID = x.ID,
+            //                 Images = x.Images,
+            //                 Name = x.Name,
+            //                 MetaTitle = x.MetaTitle,
+            //                 Price = x.Price
+            //             });
+            //model.OrderByDescending(x => x.CreatedDate).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            return a;
+        }
     }
 }

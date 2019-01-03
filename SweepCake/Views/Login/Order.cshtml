@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Shop_data.Cart>
+
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Order</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_Payment_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shipping_Email)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Cart_Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_Payment_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shipping_Email)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Cart_Status)
+        </td>
+        
+    </tr>
+}
+
+</table>

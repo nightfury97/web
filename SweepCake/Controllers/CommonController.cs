@@ -14,8 +14,8 @@ namespace SweepCake.Controllers
         // GET: Common
         public ActionResult Index()
         {
-            if(CommonConstant.USER_SESSION != null)
-            ViewBag.User = Session[CommonConstant.USER_SESSION];
+            if (CommonConstant.USER_SESSION != null)
+                ViewBag.User = Session[CommonConstant.USER_SESSION];
             //ViewBag.Name = 
             return View();
         }
@@ -44,7 +44,7 @@ namespace SweepCake.Controllers
         //    var customer = new user();
         //    if (user != null)
         //    {
-                
+
         //    }
 
         //    return PartialView(list);
@@ -52,9 +52,10 @@ namespace SweepCake.Controllers
         [ChildActionOnly]
         public PartialViewResult Cake_List(string code)
         {
-            List<string> ids = new Cake_Type_Control().ListCakes(code);
+            int total = 0;
+            List<string> ids = new Cake_Type_Control().ListCakes(code, ref total);
 
-            List <Cake_Dentals> cakes = new List<Cake_Dentals>();
+            List<Cake_Dentals> cakes = new List<Cake_Dentals>();
 
             foreach (string ID in ids)
             {
@@ -68,10 +69,37 @@ namespace SweepCake.Controllers
                 cake.Decripsion = product.Cake_decripsion;
                 cake.Images = new DentalProduct().Image(product.Cake_ID);
                 cakes.Add(cake);
-                              
+
             }
             return PartialView(cakes);
         }
+        [HttpPost]
+        public ActionResult Search(string key, int page = 1, int pageSize = 9)
+        {
+            int totalRecord = 0;
+            List<string> ids = new CakeControl().Search(key, ref totalRecord, page, pageSize);
+            ViewBag.Total = totalRecord;
+            ViewBag.page = page;
+            List<Cake_Dentals> cakes = new List<Cake_Dentals>();
 
+            foreach (string ID in ids)
+            {
+                Cake_Dentals cake = new Cake_Dentals();
+                var product = new DentalProduct().GetByID(ID);
+                cake.ID = product.Cake_ID;
+                cake.Name = product.Cake_Name;
+                cake.Price = (float)product.Cake_Price;
+                cake.Type = new DentalProduct().GetTypeName(product.Cake_Type_Code);
+                cake.TypeCode = product.Cake_Type_Code;
+                cake.Discount = (float)product.Discount;
+                cake.Decripsion = product.Cake_decripsion;
+                cake.Image1 = new DentalProduct().Image1(product.Cake_ID);
+                cakes.Add(cake);
+
+            }
+
+
+            return View(cakes);
+        }
     }
 }

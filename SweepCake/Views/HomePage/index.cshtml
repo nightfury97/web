@@ -192,7 +192,7 @@
                     <span>$ @item.Price</span>
                     <div class="clearfix"> </div>
                     <div class="buy">
-                        <a class="btn" data-id="@item.ID" @*onkeypress="@Html.Action("AddItem","Cart",new { @productId = item.ID,@quantity = 1 })"*@>Buy Now</a>
+                        <a class="btn" data-id="@item.ID" data-pri="@item.Price*(1- @item.Discount)">Buy Now</a>
 
                     </div>
 
@@ -296,17 +296,25 @@
     });
     function buycake(buyButton) {
         var cake_id = $(buyButton).data('id');
+        var cake_pri = parseFloat($(buyButton).data('pri'));
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 document.getElementById("demo").innerHTML = xhttp.responseText;
             }
         };
-        var num = prompt("Please enter the amount you need to buy :", "1");
+        do {
+            var num = parseInt(prompt("Please enter the amount you need to buy :", "1"), 10);
+        } while (isNaN(num) || num > 100 || num < 1);
         xhttp.open("POST", "/AddCake?productId=" + cake_id + "&quantity="+num, true);
 
         //alert("Added Cart");
         xhttp.send();
+        var total = parseFloat($('#cart-info').text());
+        total += (num * cake_pri);
+        $(document).ready(function () {
+            $('#cart-info').text(total);
+        });
     }
 </script>
 <!-- bottom-grids -->

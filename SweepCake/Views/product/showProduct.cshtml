@@ -1,0 +1,42 @@
+﻿@model PagedList.IPagedList<SweepCake.Models.Cake_Dentals>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="row">
+    <div class="clearfix"></div>
+
+    @foreach (var item in Model)
+    {
+        var link = "/detail/" + item.ID;
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="product-grid">
+                <div class="feature-img">
+                    <a href="@link">
+                        <img src="@item.Image1" alt="@item.Name" class="img-responsive" style="height: 238.5px">
+                    </a>
+
+                </div>
+                <div class="prod-info">
+
+                    <div class="price-box">
+                        <p class="special-price">
+                            <span> @item.Price$</span>
+                        </p>
+                    </div>
+
+                    <a href="@link">
+                        <h3>@item.Name</h3>
+                    </a>
+                </div>
+                <div class="grid-action-box">
+
+
+                    <a class="list-btn-add" data-id="@item.ID" data-pri="@item.Price"><span>Buy</span></a>
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
